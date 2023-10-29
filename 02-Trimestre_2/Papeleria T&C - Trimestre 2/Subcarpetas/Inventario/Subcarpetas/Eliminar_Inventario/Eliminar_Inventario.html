@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Eliminar_Inventario.css">
+    <link rel="stylesheet" href="../../../../Recursos_Comunes/fonts/fonts.css">
+    <script src="Eliminar_Inventario.js" defer></script>
+    <title>ELIMINAR PRODUCTO - Papeleria T&C</title>
+</head>
+
+<body>
+    <header class="Encabezado">
+        <div class="Encabezado-Contenido">
+            <h1 class="Encabezado-Titulo">
+                <img class="Encabezado-Logo" src="../../../../Recursos_Comunes/images/Logo-PapeleriaT_C-JPG.jpg" alt="">
+                PAPELERIA T&C
+            </h1>
+        </div>
+        <h1 class="FuenteEncabezadoOpciones">
+            <span onclick="mostraropciones()">OPCIONES</span>
+        </h1>
+
+    </header>
+    <div class="opciones" id="opciones">
+        <a href="../../../MenuPrincipal/MenuPrincipal.html">MENÚ</a>
+        <a href="../../../Contacto/Contacto.html">CONTACTO</a>
+        <a href="../../../Login/IniciarSesion.html">CERRAR SESION</a>
+    </div>
+
+    <main class="Mitad1">
+        <h1 class="TituloProveedores">ELIMINAR PRODUCTO</h1>
+    </main>
+
+    <div class="BotonRegresar">
+        <a href="../Gestionar_Inventario/Gestionar_Inventario.html">
+            <input href="" type="button" value="REGRESAR" class="BotonRegresarStyle">
+        </a>
+    </div>
+    <div class="BotonDatos">
+        <button class="BotonTablaDatos" id="toggleButton" onclick="toggleVisibility()">Tabla De Datos</button>
+    </div>
+
+    <div class="contenido-informacion" id="contenido">
+        <h1 class="TituloTabla">ELIMINAR PRODUCTO</h1>
+        <input class="tabla-contenido-actualizar" id="idProducto" type="text" required placeholder="ID del producto" autofocus>
+        <br>
+        <input class="tabla-contenido-actualizar" id="nombreProducto" type="text" required placeholder="Nombre" autofocus>
+        <br>
+        <button class="tabla-contenido-actualizar" type="button" onclick="agregarFila()">Aceptar</button>
+    </div>
+
+    <div class="tabla-actualizar">
+        <table id="tablaDatos">
+            <tr class="primero-datos">
+                <th>ID del producto</th>
+                <th>Nombre</th>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

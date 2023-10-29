@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> INVENTARIO - Papeleria T&C </title>
+    <link rel="stylesheet" href="Inventario.css">
+    <link rel="stylesheet" href="../../Recursos_Comunes/fonts/fonts.css">
+    <script src="Inventario.js" defer></script>
+</head>
+<body>
+    
+    <header class="Encabezado">
+        <div class="Encabezado-Contenido">            
+            <h1 class="Encabezado-Titulo">
+                <img class="Encabezado-Logo" src="../../Recursos_Comunes/images/Logo-PapeleriaT_C-JPG.jpg" alt=""> PAPELERIA T&C 
+            </h1>
+        </div>
+        <h1 class="FuenteEncabezadoOpciones"> 
+            <span onclick="mostraropciones()">OPCIONES</span>
+        </h1>
+
+    </header>
+    <div class="opciones" id="opciones">
+        <a href="../MenuPrincipal/MenuPrincipal.html">MENÚ</a>
+        <a href="../Contacto/Contacto.html">CONTACTO</a>
+        <a href="../Login/IniciarSesion.html">CERRAR SESION</a>
+    </div>
+    <main class="Mitad1">
+        <h1 class="TituloProveedores">INVENTARIO</h1>
+    </main>
+
+    <div class="BotonRegresar">
+        <a href="../MenuPrincipal/MenuPrincipal.html">
+            <input href=""type="button" value="MENÚ" class="BotonRegresarStyle"> 
+        </a>
+
+    </div> 
+
+    <div class="imagenes-Modulos">
+        <a href="Subcarpetas/Gestionar_Inventario/Gestionar_Inventario.html">
+            <div class="ImagenCuadroIconos">
+                <img src="../../Recursos_Comunes/images/GestionarInventario.png" alt="Imagen 1" class="ZoomClick">
+                <div class="NombreDebajoIconos"> GESTIONAR INVENTARIO </div>
+            </div>
+        </a>
+        <a href="Subcarpetas/Consultar_Inventario/Consultar_Inventario.html">
+            <div class="ImagenCuadroIconos">
+                <img src="../../Recursos_Comunes/images/ConsultarInventario.png" alt="Imagen 2" class="ZoomClick">
+                <div class="NombreDebajoIconos"> CONSULTAR INVENTARIO </div>
+            </div>
+        </a>
+
+
+    </div>
+    <main class="Mitad2">
+        <h1 class="NoticiasLetra"> ¿QUE ES "INVENTARIO"?</h1>
+    </main>
+    <main class="Mitad2-2">
+        <div class="DescripcionProveedores">
+            <h1 class="LetraDescripcionProveedores">
+                "Inventario es un registro pormenorizado y actualizado de productos o bienes disponibles en una empresa, fundamental para controlar existencias y planificar aprovisionamientos de manera efectiva.
+            </h1>
+        </div>
+    </main>
+    <main class="Mitad3">
+        <h1 class="NoticiasLetra"> ¿PARA QUE SIRVE?</h1>
+    </main>
+    <main class="Mitad3-3">
+        <main class="ModificarProveedoresContexto">
+            <h1 class="ContextoLetraTitulo"><img src="../../Recursos_Comunes/images/GestionarInventario.png" alt="" style="width: 5%;"> Gestionar Inventario </h1>
+            <div class="ContextoProveedores">
+                <h1>
+                    "Gestionar inventario se refiere a la tarea de supervisar, organizar y controlar los productos o materiales almacenados en una empresa, asegurando un flujo eficiente y manteniendo un registro preciso de las existencias disponibles."</h1>
+            </div>
+        </main>
+        <main class="GestionPedidosContexto">
+            <h1 class="ContextoLetraTitulo"> <img src="../../Recursos_Comunes/images/ConsultarInventario.png" alt="" style="width: 5%;"> Consultar Inventario </h1>
+            <div class="ContextoProveedores">
+                <h1>"Consultar inventario implica revisar y obtener información actualizada sobre los productos o materiales almacenados en una empresa, facilitando la toma de decisiones informadas respecto a las existencias disponibles."</h1>
+            </div>
+        </main>
+    </main>
+    
+
+</body>
+</html>

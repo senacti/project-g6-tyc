@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GESTIONPROV - Papeleria T&C</title>
+    <link rel="stylesheet" href="GestionPedidos.css">
+    <link rel="stylesheet" href="../../../Recursos_Comunes/fonts/fonts.css">
+    <script src="GestionPedidos.js" defer></script>
+</head>
+<body>
+
+    <header class="Encabezado">
+        <div class="Encabezado-Contenido">            
+            <h1 class="Encabezado-Titulo">
+                <img class="Encabezado-Logo" src="../../../Recursos_Comunes/images/Logo-PapeleriaT_C-JPG.jpg" alt=""> PAPELERIA T&C 
+            </h1>
+        </div>
+        <h1 class="FuenteEncabezadoOpciones"> 
+            <span onclick="mostraropciones()">OPCIONES</span>
+        </h1>
+    </header>
+
+    <div class="opciones" id="opciones">
+        <a href="../../MenuPrincipal/MenuPrincipal.html">MENÚ</a>
+        <a href="../../Contacto/Contacto.html">CONTACTO</a>
+        <a href="../../Login/IniciarSesion.html">CERRAR SESION</a>
+    </div>
+
+    <main class="Mitad1">
+        <h1 class="TituloModificarProveedores">GESTION DE PEDIDOS</h1>
+    </main>
+
+    <div class="BotonRegresar">
+        <a href="../Proveedores.html">
+            <input type="button" value="RETURN" class="BotonRegresarStyle"> 
+        </a>
+    </div>
+
+    <!-- Formulario de Agregar Pedido -->
+    <section id="agregar-pedido" class="formulario">
+        <h2>Agregar Pedido</h2>
+        <form id="formularioAgregarPedido">
+            <label for="clientePedido">Cliente:</label>
+            <input type="text" id="clientePedido" required>
+            
+            <label for="productoPedido">Producto:</label>
+            <input type="text" id="productoPedido" required>
+            
+            <label for="cantidadPedido">Cantidad:</label>
+            <input type="number" id="cantidadPedido" required>
+            
+            <button type="button" onclick="agregarPedido()">Agregar Pedido</button>
+        </form>
+    </section>
+
+    <!-- Formulario de Generar Informe -->
+    <section id="generar-informe" class="formulario">
+        <h2>Generar Informe</h2>
+        <form id="formularioGenerarInforme">
+            <label for="fechaInicioInforme">Fecha de Inicio:</label>
+            <input type="date" id="fechaInicioInforme" required>
+            
+            <label for="fechaFinInforme">Fecha de Fin:</label>
+            <input type="date" id="fechaFinInforme" required>
+            
+            <button type="button" onclick="generarInforme()">Generar Informe</button>
+        </form>
+    </section>
+
+    <!-- Formulario de Consultar Monto -->
+    <section id="consultar-monto" class="formulario">
+        <h2>Consultar Monto</h2>
+        <form id="formularioConsultarMonto">
+            <label for="clienteMonto">Cliente:</label>
+            <input type="text" id="clienteMonto" required>
+            
+            <button type="button" onclick="consultarMonto()">Consultar Monto</button>
+        </form>
+    </section>
+
+    <!-- Formulario de Consultar Historia de Pedidos -->
+    <section id="consultar-historia" class="formulario">
+        <h2>Consultar Historia de Pedidos</h2>
+        <form id="formularioConsultarHistoria">
+            <label for="clienteHistoria">Cliente:</label>
+            <input type="text" id="clienteHistoria" required>
+            
+            <button type="button" onclick="consultarHistoriaPedidos()">Consultar Historia</button>
+        </form>
+    </section>
+
+    <!-- Tabla de Resultados -->
+    <section id="resultados">
+        <h2 class="TituloResultados">Resultados</h2>
+        <table id="tablaResultados">
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Los resultados se mostrarán aquí -->
+            </tbody>
+        </table>
+    </section>
+
+</body>
+</html>

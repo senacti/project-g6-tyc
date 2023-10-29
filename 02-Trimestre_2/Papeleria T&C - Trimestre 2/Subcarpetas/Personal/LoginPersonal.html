@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Personal Login - Papeleria T&C </title>
+    <link rel="stylesheet" href="LoginPersonal.css">
+    <link rel="stylesheet" href="../../Recursos_Comunes/fonts/fonts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script src="LoginPersonal.js" defer></script>
+</head>
+<body>
+    <header class="Encabezado">
+        <div class="Encabezado-Contenido">
+            <h1 class="Encabezado-Titulo">
+                <img class="Encabezado-Logo" src="../../Recursos_Comunes/images/Logo-PapeleriaT_C-JPG.jpg" alt="">
+                PAPELERIA T&C
+            </h1>
+        </div>
+    </header>
+    <div class="RecuadroIniciarSesion">
+        <h2 class="TextoIniciarSesion">Iniciar Sesión</h2>
+    </div>
+    <form id="loginForm" onsubmit="return validarLogin()">
+        <label for="rol">Rol:</label>
+        <select id="rol" name="rol" required>
+            <option value="administrador">Administrador</option>
+            <option value="empleado">Empleado</option>
+        </select>
+        <br>
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" required autocomplete="off">
+        <br>
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required autocomplete="off"> 
+        <button type="button" id="mostrarContrasena" onclick="mostrarOcultarContrasena()">
+            <i id="iconoMostrar" class="fas fa-eye"></i>
+        </button>
+        
+        
+        <br>
+        <input type="submit" value="Iniciar Sesión">
+    </form>
+</body>
+</html>

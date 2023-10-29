@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> GESTIONPROV - Papeleria T&C </title>
+    <link rel="stylesheet" href="/css/informecaja.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <script src="/js/informecaja.js" defer></script>
+</head>
+
+<body>
+
+    <header class="Encabezado">
+        <div class="Encabezado-Contenido">
+            <h1 class="Encabezado-Titulo">
+                <img class="Encabezado-Logo" src="/images/Logo-PapeleriaT_C-JPG.jpg" alt="">
+                PAPELERIA T&C
+            </h1>
+        </div>
+        <h1 class="FuenteEncabezadoOpciones">
+            <span onclick="mostraropciones()">OPCIONES</span>
+        </h1>
+
+    </header>
+    <div class="opciones" id="opciones">
+        <a href="MenuPrincipal">MENÚ</a>
+        <a href="Contacto">CONTACTO</a>
+        <a href="IniciarSesion">CERRAR SESION</a>
+    </div>
+    <main class="Mitad1">
+        <h1 class="TituloModificarProveedores">INFORME DE CAJA</h1>
+    </main>
+    <div class="BotonRegresar">
+        <a href="Caja">
+            <input href="" type="button" value="RETURN" class="BotonRegresarStyle">
+        </a>
+
+    </div>
+    <div class="container">
+        <h1 class="TituloSistemaCaja">Sistema de Caja</h1>
+        <div class="caja-info">
+            <label for="ingresos">Ingresos:</label>
+            <input type="number" id="ingresos" step="0.01" required>
+            <label for="gastos">Gastos:</label>
+            <input type="number" id="gastos" step="0.01" required>
+            <button class="botonRegistrar" id="registrar" onclick="registrarTransaccion()">Registrar</button>
+            <button class="botonCerrar" id="cerrar-caja" onclick="cerrarCaja()">Cerrar Caja</button>
+        </div>
+        <div id="informe-caja">
+            <h2>Informe de Caja</h2>
+            <p>Total Ingresos: $<span id="total-ingresos">0.00</span></p>
+            <p>Total Gastos: $<span id="total-gastos">0.00</span></p>
+            <p>Total Efectivo: $<span id="total-efectivo">0.00</span></p>
+        </div>
+    </div>
+</body>
+
+</html>

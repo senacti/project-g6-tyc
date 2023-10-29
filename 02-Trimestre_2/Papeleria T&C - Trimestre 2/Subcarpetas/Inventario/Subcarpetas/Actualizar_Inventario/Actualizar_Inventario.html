@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Actualizar_Inventario.css">
+    <link rel="stylesheet" href="../../../../Recursos_Comunes/fonts/fonts.css">
+    <script src="Actualizar_Inventario.js" defer></script>
+    <title>ACTUALIZAR INVENTARIO - Papeleria T&C</title>
+</head>
+<body>
+    <header class="Encabezado">
+        <div class="Encabezado-Contenido">
+            <h1 class="Encabezado-Titulo">
+                <img class="Encabezado-Logo" src="../../../../Recursos_Comunes/images/Logo-PapeleriaT_C-JPG.jpg" alt="">
+                PAPELERIA T&C
+            </h1>
+        </div>
+        <h1 class="FuenteEncabezadoOpciones">
+            <span onclick="mostraropciones()">OPCIONES</span>
+        </h1>
+
+    </header>
+    <div class="opciones" id="opciones">
+        <a href="../../../MenuPrincipal/MenuPrincipal.html">MENÚ</a>
+        <a href="../../../Contacto/Contacto.html">CONTACTO</a>
+        <a href="../../../Login/IniciarSesion.html">CERRAR SESION</a>
+    </div>
+
+    <main class="Mitad1">
+        <h1 class="TituloProveedores">ACTUALIZAR INVENTARIO</h1>
+    </main>
+
+    <div class="BotonRegresar">
+        <a href="../Gestionar_Inventario/Gestionar_Inventario.html">
+            <input href="" type="button" value="REGRESAR" class="BotonRegresarStyle">
+        </a>
+    </div>
+    <div class="BotonDatos">
+        <button class="BotonTablaDatos" id="toggleButton" onclick="toggleVisibility()">Tabla De Datos</button>
+    </div>
+   
+        
+        <div class="contenido-informacion" id="contenido">
+            <h1 class="TituloTabla">Tabla</h1>
+            <input  class="tabla-contenido-actualizar" type="text" required placeholder=" ID del producto" id="idProducto" autofocus>
+            <br>
+            <input class="tabla-contenido-actualizar"type="text" placeholder=" Nombre Inicial" id="nombreInicial" autofocus>
+            <br>
+            <input class="tabla-contenido-actualizar"type="text" placeholder=" Cambiar Nombre" id="cambiarNombre" autofocus>
+            <br>
+            <input class="tabla-contenido-actualizar" type="number" placeholder=" Cantidad" id="cantidad" autofocus>
+            <br>
+            <input class="tabla-contenido-actualizar"type="text" placeholder=" Tamaño" id="tamaño" autofocus>
+            <br>
+            <input class="tabla-contenido-actualizar"type="number" placeholder=" Precio" id="precio" autofocus>
+            <br>
+            <button class="tabla-contenido-actualizar"class=" Aceptar" type="submit" onclick="agregarFila()">Aceptar</button>
+        </div>
+        <div class="tabla-actualizar">
+            <table>
+                <tr class="primero-datos">
+                    <th>ID del producto</th>
+                    <th>Nombre Inicial</th>
+                    <th>Cambiar Nombre</th>
+                    <th>Cantidad</th>
+                    <th>Tamaño</th>
+                    <th>Precio</th>
+                    <th>Actualizar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </table> 
+        </div>
+   
+</body>
+</html>

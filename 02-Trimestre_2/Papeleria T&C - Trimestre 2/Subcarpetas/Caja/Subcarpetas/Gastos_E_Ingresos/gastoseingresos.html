@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> GESTIONPROV - Papeleria T&C </title>
+    <link rel="stylesheet" href="gastoseingresos.css">
+    <link rel="stylesheet" href="../../../../Recursos_Comunes/fonts/fonts.css">
+    <script src="gastoseingresos.js" defer></script>
+</head>
+
+<body>
+
+    <header class="Encabezado">
+        <div class="Encabezado-Contenido">
+            <h1 class="Encabezado-Titulo">
+                <img class="Encabezado-Logo" src="../../../../Recursos_Comunes/images/Logo-PapeleriaT_C-JPG.jpg" alt="">
+                PAPELERIA T&C
+            </h1>
+        </div>
+        <h1 class="FuenteEncabezadoOpciones">
+            <span onclick="mostraropciones()">OPCIONES</span>
+        </h1>
+
+    </header>
+    <div class="opciones" id="opciones">
+        <a href="../../../MenuPrincipal/MenuPrincipal.html">MENÚ</a>
+        <a href="../../../Contacto/Contacto.html">CONTACTO</a>
+        <a href="../../../Login/IniciarSesion.html">CERRAR SESION</a>
+    </div>
+    <main class="Mitad1">
+        <h1 class="TituloModificarProveedores">GASTOS E INGRESOS</h1>
+    </main>
+    <div class="BotonRegresar">
+        <a href="../../Caja.html">
+            <input href="" type="button" value="RETURN" class="BotonRegresarStyle">
+        </a>
+
+    </div>
+    <div class="container">
+        <h1 class="GastoIngresosTitulo">Caja - Gastos e Ingresos</h1>
+        <form id="registro-form">
+            <label for="tipo">Tipo:</label>
+            <select id="tipo" required>
+                <option value="ingreso">Ingreso</option>
+                <option value="gasto">Gasto</option>
+            </select>
+            <label for="monto">Monto:</label>
+            <input type="number" id="monto" step="0.01" required>
+            <button class="Registrar" type="button" id="registrar">Registrar</button>
+            <button class="Limpiar" type="button" id="limpiar">Limpiar</button>
+        </form>
+        <div id="historial">
+            <h2>Historial:</h2>
+            <ul id="lista-transacciones"></ul>
+        </div>
+        <p>Total: <span id="total">0.00</span></p>
+    </div>
+</body>
+
+</html>

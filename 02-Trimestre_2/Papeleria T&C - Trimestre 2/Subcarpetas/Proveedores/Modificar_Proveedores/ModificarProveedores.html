@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> MODIFICARPROV - Papeleria T&C </title>
+    <link rel="stylesheet" href="ModificarProveedores.css">
+    <link rel="stylesheet" href="../../../Recursos_Comunes/fonts/fonts.css">
+    <script src="ModificarProveedores.js" defer></script>
+</head>
+<body>
+    
+    <header class="Encabezado">
+        <div class="Encabezado-Contenido">            
+            <h1 class="Encabezado-Titulo">
+                <img class="Encabezado-Logo" src="../../../Recursos_Comunes/images/Logo-PapeleriaT_C-JPG.jpg" alt=""> PAPELERIA T&C 
+            </h1>
+        </div>
+        <h1 class="FuenteEncabezadoOpciones"> 
+            <span onclick="mostraropciones()">OPCIONES</span>
+        </h1>
+
+    </header>
+    <div class="opciones" id="opciones">
+        <a href="../../MenuPrincipal/MenuPrincipal.html">MENÚ</a>
+        <a href="../../Contacto/Contacto.html">CONTACTO</a>
+        <a href="../../Login/IniciarSesion.html">CERRAR SESION</a>
+    </div>
+    <main class="Mitad1">
+        <h1 class="TituloModificarProveedores">GESTION</h1>
+    </main>
+    <div class="BotonRegresar">
+        <a href="../Proveedores.html">
+            <input href=""type="button" value="VOLVER" class="BotonRegresarStyle"> 
+        </a>
+
+    </div>
+
+
+    <button class="Boton_modificar" onclick="modificarTabla()">Modificar Tabla de Proveedores</button>
+    <div id="formulario" style="display: none;">
+        <h2 class="TituloFormulario">Modificar Tabla de Proveedores</h2>
+        <form onsubmit="agregarProveedor(); return false;">
+            <label for="idProveedor">ID del Proveedor:</label>
+            <input type="text" id="idProveedor" required><p>
+            <label for="nombreEmpresa">Nombre de la Empresa:</label>
+            <input type="text" id="nombreEmpresa" required><p>
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" required><p>
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" required><p>
+            <label for="metodoPago">Método de Pago:</label>
+            <input type="text" id="metodoPago" required><p>
+                <div class="centrar-boton">
+                    <input class="GuardarProveedor" type="submit" value="Guardar Proveedor">
+                </div>
+
+        </form>
+    </div>
+
+    <table id="proveedores">
+        <thead>
+            <tr>
+                <th>ID del Proveedor</th>
+                <th>Nombre de la Empresa</th>
+                <th>Correo</th>
+                <th>Teléfono</th>
+                <th>Método de Pago</th>
+                <th class="acciones">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se mostrarán los proveedores -->
+        </tbody>
+    </table>
+
+    <div id="detalleProveedor">
+        <!-- Aquí se mostrarán los detalles del proveedor seleccionado -->
+
+
+</body>
+</html>

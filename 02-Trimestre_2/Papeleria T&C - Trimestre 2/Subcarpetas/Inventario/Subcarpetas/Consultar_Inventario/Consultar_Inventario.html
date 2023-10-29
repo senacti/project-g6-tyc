@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Inventario</title>
+    <link rel="stylesheet" href="Consultar_Inventario.css">
+    <link rel="stylesheet" href="../../../../Recursos_Comunes/fonts/fonts.css">
+</head>
+<body>
+    <header class="Encabezado">
+        <div class="Encabezado-Contenido">            
+            <h1 class="Encabezado-Titulo">
+                <img class="Encabezado-Logo" src="../../../../Recursos_Comunes/images/Logo-PapeleriaT_C-JPG.jpg" alt=""> PAPELERIA T&C 
+            </h1>
+        </div>
+        <h1 class="FuenteEncabezadoOpciones"> 
+            <span onclick="mostraropciones()">OPCIONES</span>
+        </h1>
+
+    </header>
+    <div class="opciones" id="opciones">
+        <a href="../../../MenuPrincipal/MenuPrincipal.html">MENÚ</a>
+        <a href="../../../Contacto/Contacto.html">CONTACTO</a>
+        <a href="../../../Login/IniciarSesion.html">CERRAR SESION</a>
+    </div>
+    <main class="Mitad1">
+        <h1 class="TituloProveedores">CONSULTAR INVENTARIO</h1>
+    </main>
+
+    <div class="BotonRegresar">
+        <a href="../../Inventario.html">
+            <input href=""type="button" value="REGRESAR" class="BotonRegresarStyle"> 
+        </a>
+        
+        <button  class="BotonRegresarStyle" onclick="toggleTabla()">Ocultar Tabla</button>
+
+    </div> 
+    
+    <div class="contenido-Consulta" id="contenido">
+        <form onsubmit="Consultar(); return false;">
+            <label for="idProducto">ID del Producto:</label>
+            <input type="text" placeholder="ID del producto" id="idProducto" autofocus required><p>
+            <label for="nombreEmpresa">Nombre del Producto:</label>
+            <input type="text" placeholder="nombre" id="nombreInicial" autofocus required><p>
+                <div class="centrar-boton">
+                    <button class="tabla-contenido-Consultar"class="aceptar" type="submit" onclick="agregarFila()">Aceptar</button>
+                </div>
+
+        </form>
+    
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID del Producto</th>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>Tamaño</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-inventario">
+
+        </tbody>
+    </table>
+    <a href="../../Inventario.html"></a>
+    <script src="Consultar_Inventario.js"></script>
+</body>
+</html>

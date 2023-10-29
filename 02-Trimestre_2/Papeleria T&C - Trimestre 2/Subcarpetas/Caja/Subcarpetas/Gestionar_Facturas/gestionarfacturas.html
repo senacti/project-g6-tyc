@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> GESTIONPROV - Papeleria T&C </title>
+    <link rel="stylesheet" href="gestionarfacturas.css">
+    <link rel="stylesheet" href="../../../../Recursos_Comunes/fonts/fonts.css">
+    <script src="gestionarfacturas.js" defer></script>
+</head>
+
+<body>
+
+    <header class="Encabezado">
+        <div class="Encabezado-Contenido">
+            <h1 class="Encabezado-Titulo">
+                <img class="Encabezado-Logo" src="../../../../Recursos_Comunes/images/Logo-PapeleriaT_C-JPG.jpg" alt="">
+                PAPELERIA T&C
+            </h1>
+        </div>
+        <h1 class="FuenteEncabezadoOpciones">
+            <span onclick="mostraropciones()">OPCIONES</span>
+        </h1>
+
+    </header>
+    <div class="opciones" id="opciones">
+        <a href="../../../MenuPrincipal/MenuPrincipal.html">MENÚ</a>
+        <a href="../../../Contacto/Contacto.html">CONTACTO</a>
+        <a href="../../../Login/IniciarSesion.html">CERRAR SESION</a>
+    </div>
+    <main class="Mitad1">
+        <h1 class="TituloModificarProveedores">GESTION FACTURAS</h1>
+    </main>
+    <div class="BotonRegresar">
+        <a href="../../Caja.html">
+            <input href="" type="button" value="RETURN" class="BotonRegresarStyle">
+        </a>
+
+    </div>
+    <div class="container">
+        <h1 class="TituloFacturacion">Sistema de Facturación</h1>
+        <form id="factura-form">
+            <label for="cliente">Cliente:</label>
+            <input type="text" id="cliente" required>
+            <label for="descripcion">Descripción:</label>
+            <input type="text" id="descripcion" required>
+            <label for="monto">Monto:</label>
+            <input type="number" id="monto" step="0.01" required>
+            <button type="submit" id="crear-factura">Crear Factura</button>
+            <label for="indice">Índice de Factura:</label>
+            <input type="number" id="indice" required>
+            <button type="button" id="modificar-factura">Modificar Factura</button>
+            <label for="nueva-descripcion">Nueva Descripción:</label>
+            <input type="text" id="nueva-descripcion">
+            <label for="nuevo-monto">Nuevo Monto:</label>
+            <input type="number" id="nuevo-monto" step="0.01">
+        </form>
+        <div id="facturas">
+            <h2>Facturas:</h2>
+            <ul id="lista-facturas"></ul>
+        </div>
+    </div>
+</body>
+
+</html>

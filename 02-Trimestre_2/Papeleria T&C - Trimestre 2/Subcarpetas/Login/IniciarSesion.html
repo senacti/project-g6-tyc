@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Iniciar Sesion - Papeleria T&C </title>
+    <link rel="stylesheet" href="../../Recursos_Comunes/fonts/fonts.css">
+    <link rel="stylesheet" href="IniciarSesion.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="IniciarSesion.js" defer></script>
+</head>
+
+<body>
+    <header class="Encabezado">
+        <div class="Encabezado-Contenido">
+            <h1 class="Encabezado-Titulo">
+                <img class="Encabezado-Logo" src="../../Recursos_Comunes/images/Logo-PapeleriaT_C-JPG.jpg" alt="">
+                PAPELERIA T&C
+            </h1>
+        </div>
+    </header>
+    <nav class="Pestañas">
+
+
+        <a href="#" class="show-container seleccionado" data-target="IniciarSesion">
+            <h2 class="PestañaLetraPrincipalCSS"> Iniciar Sesión </h2>
+        </a>
+
+        <a href="#" class="show-container" data-target="Contacto">
+            <h2 class="PestañaLetraSecundariaCSS"> Contacto </h2>
+        </a>
+
+        <a href="#" class="show-container" data-target="Nosotros">
+            <h2 class="PestañaLetraSecundariaCSS"> Nosotros </h2>
+        </a>
+
+
+    </nav>
+
+
+    <div class="Nav-contenedor" id="IniciarSesion">
+
+        <div class="DivIniciarSesion">
+            <h1 class="TextoIniciarSesion"> INICIAR SESION </h1>
+        </div>
+
+        <div class="center-content">
+
+            <div class="datos">
+                <div class="general-datos">
+                    <input class="Formulario" type="text" placeholder="ID de usuario" id="usuario" required autocomplete="off">
+                </div>
+            
+                <div class="general-datos">
+                    <input class="Formulario" type="password" placeholder="Contraseña" id="contrasena" required autocomplete="off">
+                </div>
+                <button type="button" id="mostrarContrasena" onclick="mostrarOcultarContrasena()">
+                    <i id="iconoMostrar" class="fas fa-eye"></i>
+                </button>
+            
+                <button class="entrar" onclick="iniciarSesion()">Entrar</button>
+
+            </div>
+            
+
+        </div>
+
+    </div>
+
+    <div class="Nav-contenedor" id="Contacto">
+
+        <div class="Contacto">
+            <div class="FormularioContacto">
+                <h2>Contacto</h2>
+                <form action="Contacto.php" method="post">
+                    <label class="labelContacto" for="nombre">Nombre:</label>
+                    <input class="inputContacto" type="text" id="nombre" name="nombre" required>
+                    
+                    <label class="labelContacto" for="email">Correo Electrónico:</label>
+                    <input class="inputContacto" type="email" id="email" name="email" required>
+                    
+                    <label class="labelContacto" for="mensaje">Mensaje:</label>
+                    <input class="inputContacto" type="text" id="mensaje" name="mensaje" maxlength="50" placeholder="Mensaje (máximo 50 caracteres)" required>
+                    
+                    <input class="inputContacto" type="submit" name="enviar" value="Enviar">
+                </form>
+    
+            </div>
+            <div class="Informacion">
+                <h2>Información de Contacto</h2>
+                <p>¡Estamos aquí para ayudarte! Puedes contactarnos a través de este formulario o utilizando los siguientes datos de contacto:</p>
+                <ul>
+                    <li><strong>Teléfono:</strong> <span class="copiar-texto" data-texto="(302) 743-1100">(302) 743-1100</span></li>
+                    <li><strong>Correo Electrónico:</strong> <span class="copiar-texto" data-texto="info@papeleriatyc.com">info@papeleriatyc.com</span></li>
+                    <li><strong>Dirección:</strong> <span class="copiar-texto" data-texto="Calle Principal #123, Ciudad, País">Calle Principal #123, Ciudad, País</span></li>
+                </ul>
+            </div>
+            <div id="mensaje-copiado">Texto copiado al portapapeles.</div>
+            
+        </div>
+
+    </div>
+
+
+
+    <div class="Nav-contenedor" id="Nosotros">
+
+        <section class="tarjetas-container1">
+            <div class="tarjeta">
+                <div class="tarjeta-imagen">
+                    <img src="../../Recursos_Comunes/images/PerfilDiego.jpg" alt="Persona 1">
+                </div>
+                <div class="tarjeta-contenido">
+                    <h2>DIEGO MUÑOZ</h2>
+                    <p>Co-Fundador Web PAPELERIA T&C</p>
+                </div>
+            </div>
+            <h1>-</h1>
+            <div class="tarjeta">
+                <div class="tarjeta-imagen">
+                    <img src="../../Recursos_Comunes/images/PerfilAndres.jpg" alt="Persona 2">
+                </div>
+                <div class="tarjeta-contenido">
+                    <h2>ANDRES VALERO</h2>
+                    <p>Co-Fundador Web PAPELERIA T&C</p>
+                </div>
+            </div>
+
+        </section>
+        <section class="tarjetas-container1">
+            <div class="tarjeta">
+                <div class="tarjeta-imagen">
+                    <img src="../../Recursos_Comunes/images/PerfilJoseph.jpg" alt="Persona 1">
+                </div>
+                <div class="tarjeta-contenido">
+                    <h2>JOSEPH SIFONTES</h2>
+                    <p>Co-Fundador Web PAPELERIA T&C</p>
+                </div>
+            </div>
+            <div>
+                <h1>-</h1>
+            </div>
+            <div class="tarjeta">
+                <div class="tarjeta-imagen">
+                    <img src="../../Recursos_Comunes/images/PerfilMorti.jpg" alt="Persona 2">
+                </div>
+                <div class="tarjeta-contenido">
+                    <h2>DEIVI MORTIGO</h2>
+                    <p>Co-Fundador Web PAPELERIA T&C</p>
+                </div>
+            </div>
+
+        </section>
+
+
+
+    </div>
+
+</body>
+
+</html>
