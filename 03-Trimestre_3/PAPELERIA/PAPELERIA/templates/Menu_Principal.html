@@ -1,0 +1,296 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="icon" href="{% static 'img/LogoSinFondo_PapeleriaT_C.png' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/Menu_Principal.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="{% static 'js/Menu_Principal.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <!-- Google Fonts-->
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
+    <!-- Raleway-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap" rel="stylesheet">
+    <!-- Oswald -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+
+            <a class="navbar-brand text-center-vertical" href="#">
+                <img src="{% static 'img/LogoSinFondo_PapeleriaT_C.png' %}" alt="Logo" width="40" height="40"
+                    class="rounded-circle">
+                <span class="text-custom textoinicio">PAPELERIA T&C</span>
+            </a>
+
+            <button class="navbar-toggler d-lg-inline" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#navbarMenu" aria-controls="navbarMenu">
+                <i class="fas fa-bars" id="menu-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+
+    <div class="offcanvas offcanvas-end menu-custom" tabindex="-1" id="navbarMenu" aria-labelledby="navbarMenuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="navbarMenuLabel">OPCIONES</h5>
+
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+
+                <nav class="SaludoHora">
+                    <p class="FuenteSaludo" id="saludo"></p>
+                    <p></p>
+                </nav>
+                <p></p>
+                <div class="col-md-12 custom-border p-3 ">
+                    <a class="nav-link me-4 link2 text-start fs-5" href="{% url 'ModulosIndex' %}" id="mostrarModal">
+                        MODULOS <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <ul>
+                        <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                            <a class="nav-link me-5" href="{% url 'Caja' %}">
+                                <i class="fas fa-box "></i>
+                                Caja
+                            </a>
+                        </li>
+
+                        <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                            <a class="nav-link me-5" href="{% url 'Inventario' %}">
+                                <i class="fas fa-list"></i>
+                                Inventario
+                            </a>
+                        </li>
+
+                        <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                            <a class="nav-link me-5" href="{% url 'Personal' %}">
+                                <i class="fas fa-user"></i>
+                                Personal
+                            </a>
+                        </li>
+
+                        <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                            <a class="nav-link me-6" href="{% url 'Proveedores' %}">
+                                <i class="fas fa-truck"></i>
+                                Proveedores
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <p></p>
+                <div class="col-md-12 custom-border p-3 ">
+                    <a class="nav-link me-4 link2 text-start fs-5" href="" id="mostrarModal">
+                        SOCIAL <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <ul>
+                        <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                            <a class="nav-link me-5" href="#">
+                                <i class="fas fa-home "></i>
+                                Inicio
+                            </a>
+                        </li>
+
+                        <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                            <a class="nav-link me-5" href="#">
+                                <i class="fas fa-users"></i>
+                                Nosotros
+                            </a>
+                        </li>
+
+                        <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                            <a class="nav-link me-5" href="{% url 'Ayuda' %}">
+                                <i class="fas fa-question-circle"></i>
+                                Ayuda
+                            </a>
+                        </li>
+
+                        <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                            <a class="nav-link me-6" href="{% url 'Login' %}">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Cerrar Sesion
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="ContenedorDezplazamiento">
+        <span class="TextoDezplazamiento">
+            <span class="TextoDezplazamientoEspecial2"> //</span>
+            <span class="TextoDezplazamientoEspecial">SOLO POR HOY,</span>
+            todos los artículos relacionados a los útiles escolares tendrán un 20% de descuento, no olvides aplicar esta
+            tarifa a los clientes
+            <span class="TextoDezplazamientoEspecial2"> //</span>
+        </span>
+    </div>
+
+
+    <div class="container mt-4">
+
+        <div class="col-md-12 custom-border link1 mb-4">
+
+            <p class="text-center fs-2 TituloBienvenida" style="color: white; ">BIENVENIDOS A PAPELERIA T&C</p>
+            <div class="row mb-4">
+                <div class="col md-4 ">
+                    <div class="imagenes-Modulos">
+                        <a href="{% url 'Inventario' %}">
+                            <div class="ImagenCuadroIconos">
+                                <img src="{% static 'img/IconoModuloInventario.png' %}" alt="Imagen 1"
+                                    class="ZoomClick">
+                                <div class="NombreDebajoIconos1">INVENTARIO</div>
+                            </div>
+                        </a>
+
+                        <a href="{% url 'Caja' %}">
+                            <div class="ImagenCuadroIconos">
+                                <img src="{% static 'img/IconoModuloCaja.png' %}" alt="Imagen 2" class="ZoomClick">
+                                <div class="NombreDebajoIconos1">CAJA</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="row">
+
+                <div class="col md-4 mb-4">
+                    <div class="imagenes-Modulos">
+                        <a href="{% url 'Personal' %}">
+                            <div class="ImagenCuadroIconos">
+                                <img src="{% static 'img/IconoModuloPersonal.png' %}" alt="Imagen 3" class="ZoomClick">
+                                <div class="NombreDebajoIconos2">PERSONAL</div>
+                            </div>
+                        </a>
+
+                        <a href="{% url 'Proveedores' %}">
+                            <div class="ImagenCuadroIconos">
+                                <img src="{% static 'img/IconoModuloServidores.png' %}" alt="Imagen 4"
+                                    class="ZoomClick">
+                                <div class="NombreDebajoIconos2">PROVEEDORES</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="col-md-12 custom-border link1 mb-4">
+
+            <p class="text-center fs-2 TituloBienvenida" style="color: white; ">NOTICIAS</p>
+            <div class="row mb-4">
+
+                <div class="col md-12 mb-3 ms-5">
+                    <br>
+                    <h1 class="TituloNoticias">PROGRAMA DE DESARROLLO PROFESIONAL:</h1>
+                    <h1 class="Contenido1Noticias">¡Estamos comprometidos con su crecimiento! Hemos lanzado un nuevo
+                        programa de desarrollo que incluye oportunidades de capacitación y recursos para ayudarlos a
+                        avanzar en sus carreras.</h1>
+
+                </div>
+
+
+            </div>
+            <div class="row mb-4">
+
+                <div class="col md-12 mb-3 ms-5">
+
+                    <h1 class="TituloNoticias">RECONOCIMIENTO DE LOS EMPLEADOS DEL MES:</h1>
+                    <h1 class="Contenido1Noticias">Queremos destacar y celebrar sus logros. Cada mes, estaremos
+                        reconociendo a un empleado destacado por su arduo trabajo y dedicación.</h1>
+
+                </div>
+
+
+            </div>
+            <div class="row mb-4">
+
+                <div class="col md-12 mb-3 ms-5">
+
+                    <h1 class="TituloNoticias">ÁREA DE DESCANSO RENOVADA:</h1>
+                    <h1 class="Contenido1Noticias">Hemos transformado el área de descanso en un espacio más acogedor y
+                        relajante para que puedan recargar energías durante sus pausas.</h1>
+                    <br>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="col-md-12 custom-border link1 mb-4 SeccionContacto">
+
+            <p class="text-center fs-2 TituloBienvenida" style="color: white; ">CONTACTO</p>
+                        
+            <div class="row">
+                <div class="col-md-1 "></div>
+                <!--Recuadro para video-->
+                <div class="col-md-5 ImgClick text-center-vertical justify-content-sm-center">
+                    <video controls width="100%" height="auto">
+                        <source src="ruta_del_video.mp4" type="video/mp4">
+                        Tu navegador no admite la reproducción de videos.
+                    </video>
+                </div>
+                <!--Fin de Recuadro para video-->
+                <div class="col-md-6 text-center">
+                    <div class="ayuda-box">
+                        <p class="TituloNoticias" style="color: #1db954; font-size: 1.5em;">¿Necesitas ayuda o tienes
+                            problemas con algún módulo?</p>
+                        <p class="Contenido1Noticias" style="color: white; font-size: 1.0em;">Estamos aquí para
+                            ayudarte. Si tienes alguna pregunta, necesitas asistencia o deseas reportar un problema con
+                            nuestros servicios, no dudes en contactarnos. <br><br> Utiliza nuestro formulario de
+                            contacto y te responderemos lo antes posible.</a>.</p>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <a href=" {% url 'Ayuda' %}" style="text-decoration: none;">
+                            <button class="btn btnPrimario" data-bs-toggle="modal" data-bs-target="#confirmModal" id="EstiloBoton" style="width: 10em;">¡VAMOS!</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

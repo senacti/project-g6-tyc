@@ -1,0 +1,193 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modulos MENU</title>
+    <link rel="icon" href="{% static 'img/LogoSinFondo_PapeleriaT_C.png' %}">
+
+    <!-- Boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!-- Libreria de iconos font-awesome-->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS y JS  Personalizado -->
+    <script src="{% static 'js/ModulosIndex' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/ModulosIndex.css' %}">
+
+    <!-- Boostrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!-- Google Fonts-->
+        <!-- Poppins -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
+        
+        <!-- Raleway-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap" rel="stylesheet">
+        
+        <!-- Oswald -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+
+            <a class="navbar-brand text-center-vertical" href="{% url 'Menu_Principal' %}">
+                <img src="{% static 'img/LogoSinFondo_PapeleriaT_C.png' %}" alt="Logo" width="40" height="40"
+                    class="rounded-circle">
+                <span class="text-custom textoinicio">PAPELERIA T&C</span>
+            </a>
+
+            <button class="navbar-toggler d-lg-inline" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#navbarMenu" aria-controls="navbarMenu">
+                <i class="fas fa-bars" id="menu-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+
+    <div class="offcanvas offcanvas-end menu-custom" tabindex="-1" id="navbarMenu" aria-labelledby="navbarMenuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="navbarMenuLabel">OPCIONES</h5>
+
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+
+                <nav class="SaludoHora">
+                    <p class="FuenteSaludo" id="saludo"></p>
+                    <p></p>
+                </nav>
+                <p></p>
+
+                <div class="col-md-12 custom-border p-3 ">
+                    <a class="nav-link me-4 link2 text-start fs-5" href="" id="mostrarModal">
+                        SOCIAL <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <ul>
+                        <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                            <a class="nav-link me-5" href="{% url 'Menu_Principal' %}">
+                                <i class="fas fa-home "></i>
+                                Inicio
+                            </a>
+                        </li>
+
+                        <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                            <a class="nav-link me-5" href="#">
+                                <i class="fas fa-users"></i>
+                                Nosotros
+                            </a>
+                        </li>
+
+                        <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                            <a class="nav-link me-5" href="{% url 'Ayuda' %}">
+                                <i class="fas fa-question-circle"></i>
+                                Ayuda
+                            </a>
+                        </li>
+
+                        <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                            <a class="nav-link me-6" href="{% url 'Login' %}">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Cerrar Sesion
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </ul>
+        </div>
+    </div>
+    
+    <div class="container mt-4 mb-3">
+
+        <div class="container mt-4 mb-3">
+            <div class="col-md-12 custom-border link1">
+                <p class="text-center fs-2 TituloBienvenida" style="color: white; "> MODULOS</p>
+                <div class="row mb-3">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <div class="row mt-4 mb-5">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5 mb-5">
+                                <div class="card" style="background-color:#121212; color: white;">
+                                    <img src="{% static 'img/Inventario1.avif' %}" class="card-img-top" alt="Card Image 1">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center" style="font-size: 1.5em;">INVENTARIO</h5>
+                                        <p class="card-text">Controla y administra tus productos y existencias para una gestión eficiente de inventario y seguimiento de transacciones para la papeleria. </p>
+                                        <div class="text-center">
+                                            <a href="{% url 'Inventario' %}" class="btn">¡Vamos al modulo!</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5 mb-5" >
+                                <div class="card" style="background-color:#121212; color: white;">
+                                    <img src="{% static 'img/Caja1.avif' %}" class="card-img-top" alt="Card Image 2">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">CAJA</h5>
+                                        <p class="card-text">Registra transacciones financieras y gestiona los fondos disponibles en tu organización, asegurando un control preciso del flujo de efectivo.</p>
+                                        <div class="text-center">
+                                            <a href="{% url 'Caja' %}" class="btn">¡Vamos al modulo!</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5 mb-5">
+                                <div class="card" style="background-color:#121212; color: white;">
+                                    <img src="{% static 'img/Personal1.avif' %}" class="card-img-top" alt="Card Image 3">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">PERSONAL</h5>
+                                        <p class="card-text">Administra los datos y tareas relacionadas con los empleados de tu equipo, incluyendo contrataciones, capacitaciones y evaluaciones.</p>
+                                        <div class="text-center">
+                                            <a href="{% url 'Personal' %}" class="btn">¡Vamos al modulo!</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-5 mb-5">
+                                <div class="card" style="background-color:#121212; color: white;">
+                                    <img src="{% static 'img/Proveedores1.avif' %}" class="card-img-top" alt="Card Image 4">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">PROVEEDORES</h5>
+                                        <p class="card-text">Gestiona la información de tus proveedores, sus detalles de contacto y términos de suministro, así como las devoluciones de productos.</p>
+                                        <div class="text-center">
+                                            <a href="{% url 'Proveedores' %}" class="btn">¡Vamos al modulo!</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+
+</html>
