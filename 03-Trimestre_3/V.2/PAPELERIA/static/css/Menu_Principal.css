@@ -1,0 +1,511 @@
+body {
+
+    padding: 0;
+    margin: 0;
+    background-color: #090909;
+
+}
+
+/* NAVBAR */
+
+.text-center-vertical {
+    display: flex;
+    align-items: center;
+}
+
+.text-custom {
+    color: #ffffff;
+    font-size: 1.5em;
+    margin-left: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar-custom {
+    background-color: #121212;
+    margin-right: 0;
+    margin-left: 0;
+    border-bottom: 2px solid #3f3f3f;
+}
+
+.menu-custom {
+    background-color: #1ed760;
+    color: #ffffff;
+}
+
+.navbar-brand img {
+    margin-left: 3em;
+}
+
+.navbar-toggler {
+    margin-right: 3em;
+    background-color: #1ed760;
+    border: none;
+    outline: none;
+    width: 2em;
+    height: 2em;
+    font-size: 24px;
+
+}
+
+.navbar-toggler:hover {
+    background-color: #1db954;
+}
+
+#menu-icon {
+    color: rgb(0, 0, 0);
+}
+
+.offcanvas-header {
+    background-color: #3f3f3f;
+    border-bottom: 2px solid #535353;
+}
+
+.offcanvas-body {
+    background-color: #212121;
+    color: #ffffff;
+}
+
+.offcanvas-header {
+    background-color: #212121;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.offcanvas-title {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+}
+
+.offcanvas-header .btn-close {
+    border: none;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1ed760;
+}
+
+.SaludoHora {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+.FuenteSaludo {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 35px;
+
+}
+
+.FuenteSaludo:active {
+    color: #1db954;
+    font-family: Poppins-BoldItalic;
+
+}
+
+.FuenteSaludo:hover {
+    cursor: pointer;
+}
+
+
+.nav-link:hover {
+    color: #1db954;
+}
+
+.nav-link.link2 {
+    color: #1db954;
+}
+
+.nav-link.link2:hover {
+    color: #888888;
+}
+
+
+/* CONTENIDO /*
+
+/*MENSAJE*/
+
+/* CSS para la animacion deplazamiento*/
+
+.ContenedorDezplazamiento {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    color: #1db954;
+    background-color: #212121;
+    padding: 0.4em;
+    border-bottom: 2px solid #242424
+}
+
+.TextoDezplazamientoEspecial {
+    display: inline-block;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.TextoDezplazamientoEspecial2 {
+    display: inline-block;
+    margin-right: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+.TextoDezplazamiento {
+    display: inline-block;
+    animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.textoinicio {
+    cursor: pointer;
+    transition: color 0.4s ease-in-out;
+}
+
+.textoinicio:hover {
+    transition: color 0.3s, color 0.3s ease-in-out;
+    color: #1db954
+}
+
+
+/* contenido */
+
+.custom-border {
+    border-radius: 5px;
+    background-color: #1d1d1d;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-border h2 {
+    font-size: 18px;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.custom-border p {
+    font-size: 14px;
+    color: #888;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.col-md-3.custom-border.p-3.mb-4 {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.col-md-3.custom-border.mb-4 {
+    overflow-y: auto;
+}
+
+
+
+
+/*Columna pequeña (70%)*/
+
+.TituloBienvenida {
+    font-family: 'Raleway', sans-serif;
+    background-color: #121212;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 5px;
+    border-bottom: 1px solid #3d3d3d;
+}
+
+.custom-box.recuadros1 {
+    background-color: #5d5d5d2f;
+    border-radius: 5px;
+}
+
+.custom-box.recuadros1:hover {
+    background-color: #7c7c7c2f;
+
+}
+
+.square-image {
+    width: 100%;
+    height: auto;
+}
+
+.recuadro-imagen {
+    width: 33.33%;
+    float: left;
+    padding-left: 10px;
+
+}
+
+.row.mt-3 {
+    margin-top: 10px;
+    /* Ajusta el valor del margen según tus preferencias */
+}
+
+.col-md-3.custom-border.mb-4 {
+    height: 100%;
+    overflow-y: auto;
+}
+
+/*BOTONES PARA REDIRIGIR A MODULOS*/
+
+.NombreDebajoIconos1 {
+    position: absolute;
+    top: 115%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 50px;
+    font-size: 10px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    font-family: 'Oswald', sans-serif;
+}
+
+.NombreDebajoIconos2 {
+    position: absolute;
+    top: -15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 50px;
+    font-size: 10px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+
+.imagenes-Modulos img {
+
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0.4;
+}
+
+.imagenes-Modulos img.ZoomClick:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.imagenes-Modulos img:not(:hover) {
+    transform: scale(0.8);
+    opacity: 0.7;
+}
+
+
+.imagenes-Modulos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ImagenCuadroIconos {
+    position: relative;
+}
+
+.ImagenCuadroIconos:hover .NombreDebajoIconos1 {
+    opacity: 1;
+}
+
+.ImagenCuadroIconos:hover .NombreDebajoIconos2 {
+    opacity: 1;
+}
+
+.imagenes-Modulos img {
+    width: 120px;
+    margin: 10px;
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0.7;
+}
+
+.imagenes-Modulos img.ZoomClick:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.imagenes-Modulos a:not(:hover) img {
+    transform: scale(0.8);
+    opacity: 0.7;
+}
+
+.TituloNoticias {
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    color: #1db954;
+
+}
+
+.Contenido1Noticias {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    margin-right: 50px;
+    margin-left: 50px;
+    color: white;
+}
+
+
+
+@media screen and (max-device-width: 347px) {
+    .NoticiasLetra {
+        font-family: 'Poppins';
+        color: white;
+        font-size: 180%;
+        padding: auto;
+        display: contents;
+
+    }
+
+    .text-custom {
+        font-size: 1em;
+    }
+}
+
+.SeccionContacto {
+    background: linear-gradient(to left, #3d3d3d 40%, #067c2f 100%, #1d1d1d 10%);
+    /* Colores de fondo (izquierda a derecha) */
+}
+
+.ayuda-box {
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+
+    margin-bottom: 1em;
+    text-decoration: none;
+}
+
+.ayuda-box2 {
+    background-color:#1d1d1d;
+    border-bottom: 2px solid #1db954;
+    border-right: 2px solid #1db954;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1em;
+    text-decoration: none;
+    border-right: 2px solid white; border-bottom: 2px solid white;
+}
+
+.ayuda-text {
+    font-size: 18px;
+}
+
+.contact-link {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.contact-link:hover {
+    text-decoration: none;
+}
+
+.ImgClick img{
+    position: absolute;
+    width: 25%;
+    margin-left: -30px;
+    align-content: center;
+}
+
+.LinkAyuda{
+    text-decoration: none;
+}
+
+.ayuda-box2:hover{
+    transition: border 0.3s, color 0.3s ease-in-out;
+    color: white;
+}
+
+/* BOTON DE VUELTA Y CONFIRMACION */
+
+/* Personalizar el botón */
+.btn-primary {
+    background-color: #1db954;
+    font-weight: bold;
+}
+
+#EstiloBoton{
+    font-family: Poppins;
+    font-weight: bold;
+}
+
+.btn.btnPrimario {
+    background-color: #1db954;
+    width: 100%;
+    height: 30%;
+    font-size: 2em;
+    transition: background-color 0.3s, border 0.5s, color 0.3s, font-size 0.3s ease-out;
+}
+
+.btn.btnPrimario:hover {
+    transition: background-color 0.3s, border 0.5s, color 0.3s, font-size 0.3s ease-in;
+    border: 1px solid #121212;
+    background-color: #949494;
+    color: #1d1d1d;
+    font-size: 1.97em;
+
+}
+
+
+/*FIN DE BOTON DE VUELTA Y CONFIRMACION*/
+
+/* BARRA DE DESPLAZAMIENTO (NO TOCAR) */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.6) rgba(0, 0, 0, 0.2);
+}
+
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.6) rgba(0, 0, 0, 0.2);
+}
+
+html::-moz-scrollbar-thumb {
+    border-radius: 5px;
+}
+
+html::-moz-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
