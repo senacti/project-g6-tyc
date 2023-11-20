@@ -1,0 +1,372 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Proveedores</title>
+    <link rel="icon" href="{% static 'img/LogoSinFondo_PapeleriaT_C.png' %}">
+
+    <!-- Boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Libreria de iconos font-awesome-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS y JS  Personalizado -->
+    <script src="{% static 'js/Modificar_Proveedores.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/Modificar_Proveedores.css' %}">
+
+    <!-- Boostrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!-- Google Fonts-->
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
+
+    <!-- Raleway-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap" rel="stylesheet">
+
+    <!-- Oswald -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+
+            <a class="navbar-brand text-center-vertical" href="{% url 'Menu_Principal' %}" data-bs-toggle="modal"
+            data-bs-target="#confirmModal7">
+                <img src="{% static 'img/LogoSinFondo_PapeleriaT_C.png' %}" alt="Logo" width="40" height="40"
+                    class="rounded-circle">
+                <span class="text-custom textoinicio">PAPELERIA T&C</span>
+            </a>
+
+            <button class="navbar-toggler d-lg-inline" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#navbarMenu" aria-controls="navbarMenu">
+                <i class="fas fa-bars" id="menu-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+
+    <div class="offcanvas offcanvas-end menu-custom" tabindex="-1" id="navbarMenu" aria-labelledby="navbarMenuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="navbarMenuLabel">OPCIONES</h5>
+
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+
+                <nav class="SaludoHora">
+                    <p class="FuenteSaludo" id="saludo"></p>
+                    <p></p>
+                </nav>
+                <p></p>
+                <div class="col-md-12 custom-border p-3 ">
+                    <a class="nav-link me-4 link2 text-start fs-5" href="{% url 'ModulosIndex' %}"
+                        data-bs-toggle="modal" data-bs-target="#confirmModal1">
+                        MODULOS <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <ul>
+                        <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                            <a class="nav-link me-5" href="{% url 'Caja' %}" data-bs-toggle="modal"
+                                data-bs-target="#confirmModal2">
+                                <i class="fas fa-box "></i>
+                                Caja
+                            </a>
+                        </li>
+
+                        <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                            <a class="nav-link me-5" href="{% url 'Inventario' %}" data-bs-toggle="modal"
+                                data-bs-target="#confirmModal3">
+                                <i class="fas fa-list"></i>
+                                Inventario
+                            </a>
+                        </li>
+
+                        <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                            <a class="nav-link me-5" href="{% url 'Personal' %}" data-bs-toggle="modal"
+                                data-bs-target="#confirmModal4">
+                                <i class="fas fa-user"></i>
+                                Personal
+                            </a>
+                        </li>
+
+                        <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                            <a class="nav-link me-6" href="{% url 'Proveedores' %}" data-bs-toggle="modal" data-bs-target="#confirmModal5">
+                                <i class="fas fa-truck"></i>
+                                Proveedores
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <p></p>
+                <div class="col-md-12 custom-border p-3 ">
+                    <a class="nav-link me-4 link2 text-start fs-5" href="" data-bs-toggle="modal" data-bs-target="#confirmModal6">
+                        SOCIAL <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <ul>
+                        <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                            <a class="nav-link me-5" href="{% url 'Menu_Principal' %}" data-bs-toggle="modal"
+                                data-bs-target="#confirmModal7">
+                                <i class="fas fa-home "></i>
+                                Inicio
+                            </a>
+                        </li>
+
+                        <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                            <a class="nav-link me-5" href="#" data-bs-toggle="modal" data-bs-target="#confirmModal8">
+                                <i class="fas fa-users"></i>
+                                Nosotros
+                            </a>
+                        </li>
+
+                        <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                            <a class="nav-link me-5" href="{% url 'Ayuda' %}" data-bs-toggle="modal"
+                                data-bs-target="#confirmModal9">
+                                <i class="fas fa-question-circle"></i>
+                                Ayuda
+                            </a>
+                        </li>
+
+                        <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                            <a class="nav-link me-6" href="{% url 'Login' %}" data-bs-toggle="modal"
+                                data-bs-target="#confirmModal0">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Cerrar Sesion
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </ul>
+        </div>
+    </div>
+    <div class="container mt-4 d-flex justify-content-start align-items-start"
+        style="position: absolute; margin-left: 1em;">
+        <button class="btn btnPrimario" data-bs-toggle="modal" data-bs-target="#confirmModal" id="EstiloBoton">
+            Volver
+        </button>
+    </div>
+
+    <!-- Modal de Confirmación para volver -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Confirmación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas volver a la página anterior? <br> Recuerda Guardar los cambios
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <a href=" {% url 'Proveedores' %}" class="btn btnSecundario">Seguir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal de Confirmación para Modulos -->
+    <div class="modal fade" id="confirmModal1" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Confirmación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas ir al menu de Modulos? <br> Recuerda Guardar los cambios
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <a href=" {% url 'ModulosIndex' %}" class="btn btnSecundario">Seguir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal de Confirmación para Caja -->
+    <div class="modal fade" id="confirmModal2" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Confirmación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas ir al modulo Caja? <br> Recuerda Guardar los cambios
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <a href=" {% url 'Caja' %}" class="btn btnSecundario">Seguir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal de Confirmación para Inventario -->
+    <div class="modal fade" id="confirmModal3" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Confirmación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas ir al modulo Inventario? <br> Recuerda Guardar los cambios
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <a href=" {% url 'Inventario' %}" class="btn btnSecundario">Seguir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal de Confirmación para Personal -->
+    <div class="modal fade" id="confirmModal4" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Confirmación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas ir al modulo Personal? <br> Recuerda Guardar los cambios
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <a href=" {% url 'Personal' %}" class="btn btnSecundario">Seguir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal de Confirmación para Proveedores -->
+    <div class="modal fade" id="confirmModal5" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Confirmación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas ir al modulo Proveedores? <br> Recuerda Guardar los cambios
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <a href=" {% url 'Proveedores' %}" class="btn btnSecundario">Seguir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal de Confirmación para Social -->
+    <div class="modal fade" id="confirmModal6" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Confirmación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas ir a "Social"? <br> Recuerda Guardar los cambios
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <a href=" {% url 'Personal' %}" class="btn btnSecundario">Seguir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal de Confirmación para Inicio -->
+    <div class="modal fade" id="confirmModal7" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Confirmación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas ir al menu principal? <br> Recuerda Guardar los cambios
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <a href=" {% url 'Menu_Principal' %}" class="btn btnSecundario">Seguir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal de Confirmación para Nosotros -->
+    <div class="modal fade" id="confirmModal8" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Confirmación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas ir a "Nosotros"? <br> Recuerda Guardar los cambios
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <a href=" {% url 'Personal' %}" class="btn btnSecundario">Seguir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal de Confirmación para Ayuda -->
+    <div class="modal fade" id="confirmModal9" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Confirmación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas ir a "Ayuda"? <br> Recuerda Guardar los cambios
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <a href=" {% url 'Personal' %}" class="btn btnSecundario">Seguir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal de Confirmación para Cerrar Sesion -->
+    <div class="modal fade" id="confirmModal0" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Confirmación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas Cerrar Sesion? <br> Recuerda Guardar los cambios
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <a href=" {% url 'Personal' %}" class="btn btnSecundario">Seguir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+</body>
+
+</html>
