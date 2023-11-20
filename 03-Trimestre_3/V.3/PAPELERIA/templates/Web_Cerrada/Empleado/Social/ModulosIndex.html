@@ -1,0 +1,98 @@
+{% extends 'Web_Cerrada/Herencias/HerenciaEmpleado.html' %}
+
+{% load static %}
+
+{% block title %}
+
+Modulos Index
+
+{% endblock %}
+
+
+{% block js %}
+
+<script src="{% static 'js/Web_Cerrada/Empleado/Social/ModulosIndex.js' %}"></script>
+
+{% endblock %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/Web_Cerrada/Empleado/Social/ModulosIndex.css' %}">
+
+{% endblock %}
+
+{% block contenido %}
+    
+    <div class="container mt-4 mb-3">
+
+        <div class="container mt-4 mb-3">
+            <div class="col-md-12 custom-border link1">
+                <p class="text-center fs-2 TituloBienvenida" style="color: white; "> MODULOS</p>
+                <div class="row mb-3">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <div class="row mt-4 mb-5">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5 mb-5">
+                                <div class="card" style="background-color:#121212; color: white;">
+                                    <img src="{% static 'img/Inventario1.avif' %}" class="card-img-top" alt="Card Image 1">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center" style="font-size: 1.5em;">INVENTARIO</h5>
+                                        <p class="card-text">Controla y administra tus productos y existencias para una gestión eficiente de inventario y seguimiento de transacciones para la papeleria. </p>
+                                        <div class="text-center">
+                                            <a href="{% url 'Inventario' %}" class="btn">¡Vamos al modulo!</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5 mb-5" >
+                                <div class="card" style="background-color:#121212; color: white;">
+                                    <img src="{% static 'img/Caja1.avif' %}" class="card-img-top" alt="Card Image 2">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">CAJA</h5>
+                                        <p class="card-text">Registra transacciones financieras y gestiona los fondos disponibles en tu organización, asegurando un control preciso del flujo de efectivo.</p>
+                                        <div class="text-center">
+                                            <a href="{% url 'Caja' %}" class="btn">¡Vamos al modulo!</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5 mb-5">
+                                <div class="card" style="background-color:#121212; color: white;">
+                                    <img src="{% static 'img/Personal1.avif' %}" class="card-img-top" alt="Card Image 3">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">PERSONAL</h5>
+                                        <p class="card-text">Administra los datos y tareas relacionadas con los empleados de tu equipo, incluyendo contrataciones, capacitaciones y evaluaciones.</p>
+                                        <div class="text-center">
+                                            <a href="{% url 'PersonalEmpleado' %}" class="btn">¡Vamos al modulo!</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-5 mb-5">
+                                <div class="card" style="background-color:#121212; color: white;">
+                                    <img src="{% static 'img/Proveedores1.avif' %}" class="card-img-top" alt="Card Image 4">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">PROVEEDORES</h5>
+                                        <p class="card-text">Gestiona la información de tus proveedores, sus detalles de contacto y términos de suministro, así como las devoluciones de productos.</p>
+                                        <div class="text-center">
+                                            <a href="{% url 'Proveedores' %}" class="btn">¡Vamos al modulo!</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+
+    </div>
+    
+{% endblock %}

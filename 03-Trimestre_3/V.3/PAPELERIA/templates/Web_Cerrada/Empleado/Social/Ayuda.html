@@ -1,0 +1,79 @@
+{% extends 'Web_Cerrada/Herencias/HerenciaEmpleado.html' %}
+
+{% load static %}
+
+{% block title %}
+
+Ayuda
+
+{% endblock %}
+
+
+{% block js %}
+
+<script src="{% static 'js/Web_Cerrada/Empleado/Social/Ayuda.js' %}"></script>
+
+{% endblock %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/Web_Cerrada/Empleado/Social/Ayuda.css' %}">
+
+{% endblock %}
+
+{% block contenido %}
+
+
+    <div class="row"></div>
+    <div class="container mt-4">
+        <div class="col-md-12 custom-border link1 mb-4">
+            <!-- Contenido de la columna pequeña -->
+            <p class="text-center fs-2 TituloBienvenida" style="color: white; ">CONTACTO</p>
+            <div class="Contacto">
+                <div class="Formulario">
+                    <h2>Contacto</h2>
+                    <form action="Contacto.php" method="post">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="mensaje">Mensaje:</label>
+                        <input type="text" id="mensaje" name="mensaje" maxlength="50"
+                            placeholder="Mensaje (máximo 50 caracteres)" required>
+
+                        <input type="submit" name="enviar" value="Enviar">
+                    </form>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <div class="col-md-12 custom-border link1 mb-4">
+            <p class="text-center fs-2 TituloBienvenida" style="color: white; ">INFORMACION</p>
+            <div class="Contacto">
+                <div class="Informacion">
+                    <h2>Información de Contacto</h2>
+                    <p>¡Estamos aquí para ayudarte! Puedes contactarnos a través de este formulario o utilizando los
+                        siguientes datos de contacto:</p>
+                    <ul>
+                        <li><strong class="TituloInformacion">Teléfono:</strong> <span class="copiar-texto"
+                                data-texto="(302) 743-1100">(302) 743-1100</span></li>
+                        <li><strong class="TituloInformacion">Correo Electrónico:</strong> <span class="copiar-texto"
+                                data-texto="info@papeleriatyc.com">info@papeleriatyc.com</span></li>
+                        <li><strong class="TituloInformacion">Dirección:</strong> <span class="copiar-texto"
+                                data-texto="Calle Principal #123, Ciudad, País">Calle Principal #123, Bogotá,
+                                País</span></li>
+                    </ul>
+                </div>
+                <div id="mensaje-copiado">Texto copiado al portapapeles.</div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

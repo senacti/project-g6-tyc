@@ -1,0 +1,106 @@
+{% extends 'Web_Cerrada/Herencias/HerenciaEmpleado.html' %}
+
+{% load static %}
+
+{% block title %}
+
+Personal
+
+{% endblock %}
+
+
+{% block js %}
+
+<script src="{% static 'js/Web_Cerrada/Empleado/Personal/PersonalEmpleado.js' %}"></script>
+
+{% endblock %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/Web_Cerrada/Empleado/Personal/PersonalEmpleado.css' %}">
+
+{% endblock %}
+
+{% block contenido %}
+    <div class="container mt-4">
+
+        <div class="col-md-12 custom-border link1">
+
+            <p class="text-center fs-2 TituloBienvenida" style="color: white; ">PERSONAL </p>
+            <div class="row">
+
+                <div class="col-md-8 text-center-vertical">
+                    <div class="col-md-12">
+                        <main class="Mitad2">
+                            <h1 class="NoticiasLetra"> ¿QUE ES "PERSONAL"?</h1>
+                        </main>
+                        <main class="Mitad2-2">
+                            <div class="DescripcionProveedores">
+                                <h1 class="LetraDescripcionProveedores">
+
+                                    "El módulo 'PERSONAL' en nuestra web incluye las funciones de consultar información y administrar personal, facilitando la gestión de recursos humanos."
+                                </h1>
+                            </div>
+                        </main>
+                    </div>
+
+                </div>
+                <div class="col-md-4 text-center contenidoInv">
+                    <h2 class="TituloContenido2">SECCIONES</h2>
+                    <div class="row">
+                        <div class="col-md-12 mb-5 ">
+                            <div class="imagenes-Modulos">
+                                <a href="{% url 'Consultar_Personal' %}">
+                                    <div class="ImagenCuadroIconos">
+                                        <img src="{% static 'img/ConsultarInformacion.png' %}" alt="Imagen 1"
+                                            class="ZoomClick">
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+
+
+        </div>
+
+    </div>
+    <div class="container mt-4 mb-3">
+
+        <div class="col-md-12 custom-border link1">
+
+            <p class="text-center fs-2 TituloBienvenida" style="color: white; "> PARA QUE SIRVE? </p>
+            <div class="row">
+
+                <div class="col-md-12 text-center-vertical">
+                    <div class="col-md-12">
+                        <main class="Mitad3-3">
+                            <br>
+                            <main class="GestionPedidosContexto">
+                                <h2 class="ContextoLetraTitulo"> <img
+                                        src="{% static 'img/ConsultarInformacion.png' %}" alt="" style="width: 5%;">
+                                    Consultar Informacion </h2>
+                                <div class="ContextoProveedores">
+                                    <h4>" Consultar información de personal en nuestra web te permite buscar y acceder a datos de empleados dentro de la organización."</h4>
+                                </div>
+                            </main>
+                            
+                        </main>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}

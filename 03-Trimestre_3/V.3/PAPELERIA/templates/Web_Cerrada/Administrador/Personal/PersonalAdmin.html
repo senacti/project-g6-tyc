@@ -1,0 +1,103 @@
+{% extends 'Web_Cerrada/Herencias/HerenciaAdministrador.html' %}
+
+{% load static %}
+
+{% block title %}
+
+Personal Admin
+
+{% endblock %}
+
+
+{% block js %}
+
+<script src="{% static 'js/Web_Cerrada/Administrador/Personal/PersonalAdmin.js' %}"></script>
+
+{% endblock %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/Web_Cerrada/Administrador/Personal/PersonalAdmin.css' %}">
+
+{% endblock %}
+
+{% block contenido %}
+    <div class="container mt-4">
+
+        <div class="col-md-12 custom-border link1">
+
+            <p class="text-center fs-2 TituloBienvenida" style="color: white; ">PERSONAL (ADMIN) </p>
+            <div class="row">
+
+                <div class="col-md-8 text-center-vertical">
+                    <div class="col-md-12">
+                        <main class="Mitad2">
+                            <h1 class="NoticiasLetra"> ¿QUE ES "PERSONAL"?</h1>
+                        </main>
+                        <main class="Mitad2-2">
+                            <div class="DescripcionProveedores">
+                                <h1 class="LetraDescripcionProveedores">
+
+                                    "El módulo 'PERSONAL' en nuestra web incluye las funciones de consultar información y administrar personal, facilitando la gestión de recursos humanos."
+                                </h1>
+                            </div>
+                        </main>
+                    </div>
+
+                </div>
+                <div class="col-md-4 text-center contenidoInv">
+                    <h2 class="TituloContenido2">SECCIONES</h2>
+                    <div class="row">
+                        <div class="col-md-12 mb-5 ">
+                            <div class="imagenes-Modulos">
+                                <a href="{% url 'Administrar_Personal' %}">
+                                    <div class="ImagenCuadroIconos">
+                                        <img src="{% static 'img/AdministrarPersonal.png' %}" alt="Imagen 1"
+                                            class="ZoomClick">
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+
+
+        </div>
+
+    </div>
+    <div class="container mt-4 mb-3">
+
+        <div class="col-md-12 custom-border link1">
+
+            <p class="text-center fs-2 TituloBienvenida" style="color: white; "> PARA QUE SIRVE? </p>
+            <div class="row">
+
+                <div class="col-md-12 text-center-vertical">
+                    <div class="col-md-12">
+                        <main class="Mitad3-3">
+                            <main class="ModificarProveedoresContexto">
+                                <h1 class="ContextoLetraTitulo"><img src="{% static 'img/AdministrarPersonal.png' %}"
+                                        alt="" style="width: 5%;"> Administrar Personal </h1>
+                                <div class="ContextoProveedores">
+                                    <h4>"Administrar personal en nuestra web te permite gestionar empleados y realizar tareas de recursos humanos, como contratación y evaluación de desempeño."</h4>
+                                </div>
+                            </main>
+                        </main>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}

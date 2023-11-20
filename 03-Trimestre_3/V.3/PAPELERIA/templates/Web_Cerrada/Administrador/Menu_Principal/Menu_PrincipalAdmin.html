@@ -1,0 +1,147 @@
+{% extends 'Web_Cerrada/Herencias/HerenciaAdministrador.html' %}
+
+{% load static %}
+
+{% block title %}
+
+Menu Admin
+
+{% endblock %}
+
+
+{% block js %}
+
+<script src="{% static 'js/Web_Cerrada/Administrador/Menu_Principal/Menu_PrincipalAdmin.js' %}"></script>
+
+{% endblock %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/Web_Cerrada/Administrador/Menu_Principal/Menu_PrincipalAdmin.css' %}">
+
+{% endblock %}
+
+{% block contenido %}
+
+<div class="ContenedorDezplazamiento">
+    <span class="TextoDezplazamiento">
+        <span class="TextoDezplazamientoEspecial2"> //</span>
+        <span class="TextoDezplazamientoEspecial">SOLO POR HOY,</span>
+        todos los artículos relacionados a los útiles escolares tendrán un 20% de descuento, no olvides aplicar esta
+        tarifa a los clientes
+        <span class="TextoDezplazamientoEspecial2"> //</span>
+    </span>
+</div>
+
+
+<div class="container mt-4">
+
+    <div class="col-md-12 custom-border link1 mb-4">
+
+        <p class="text-center fs-2 TituloBienvenida" style="color: white; ">BIENVENIDOS A PAPELERIA T&C</p>
+        <div class="row mb-4">
+            <div class="col md-4 ">
+                <div class="imagenes-Modulos">
+                    <a href="{% url 'InventarioAdmin' %}">
+                        <div class="ImagenCuadroIconos">
+                            <img src="{% static 'img/IconoModuloInventario.png' %}" alt="Imagen 1" class="ZoomClick">
+                            <div class="NombreDebajoIconos1">INVENTARIO</div>
+                        </div>
+                    </a>
+
+                    <a href="{% url 'CajaAdmin' %}">
+                        <div class="ImagenCuadroIconos">
+                            <img src="{% static 'img/IconoModuloCaja.png' %}" alt="Imagen 2" class="ZoomClick">
+                            <div class="NombreDebajoIconos1">CAJA</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="row">
+
+            <div class="col md-4 mb-4">
+                <div class="imagenes-Modulos">
+                    <a href="{% url 'PersonalAdmin' %}">
+                        <div class="ImagenCuadroIconos">
+                            <img src="{% static 'img/IconoModuloPersonal.png' %}" alt="Imagen 3" class="ZoomClick">
+                            <div class="NombreDebajoIconos2">PERSONAL</div>
+                        </div>
+                    </a>
+
+                    <a href="{% url 'ProveedoresAdmin' %}">
+                        <div class="ImagenCuadroIconos">
+                            <img src="{% static 'img/IconoModuloServidores.png' %}" alt="Imagen 4" class="ZoomClick">
+                            <div class="NombreDebajoIconos2">PROVEEDORES</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<div class="container mt-4">
+    <div class="col-md-12 custom-border link1 mb-4">
+
+        <p class="text-center fs-2 TituloBienvenida" style="color: white; ">NOTICIAS</p>
+        <div class="row mb-4">
+
+            <div class="col md-12 mb-3 ms-5">
+                <br>
+                <h1 class="TituloNoticias">PROXIMAMENTE:</h1>
+                <h1 class="Contenido1Noticias">El jefe podra cambiar las noticias a su gusto para que los empleados puedan verla.</h1>
+                <br>
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+</div>
+<div class="container mt-4">
+    <div class="col-md-12 custom-border link1 mb-4 SeccionContacto">
+
+        <p class="text-center fs-2 TituloBienvenida" style="color: white; ">CONTACTO</p>
+
+        <div class="row">
+            <div class="col-md-1 "></div>
+            <!--Recuadro para video-->
+            <div class="col-md-5 ImgClick text-center-vertical justify-content-sm-center">
+                <video controls width="100%" height="auto">
+                    <source src="ruta_del_video.mp4" type="video/mp4">
+                    Tu navegador no admite la reproducción de videos.
+                </video>
+            </div>
+            <!--Fin de Recuadro para video-->
+            <div class="col-md-6 text-center">
+                <div class="ayuda-box">
+                    <p class="TituloNoticias" style="color: #1db954; font-size: 1.5em;">¿Necesitas ayuda o tienes
+                        problemas con algún módulo?</p>
+                    <p class="Contenido1Noticias" style="color: white; font-size: 1.0em;">Estamos aquí para
+                        ayudarte. Si tienes alguna pregunta, necesitas asistencia o deseas reportar un problema con
+                        nuestros servicios, no dudes en contactarnos. <br><br> Utiliza nuestro formulario de
+                        contacto y te responderemos lo antes posible.</a>.</p>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <a href=" {% url 'Ayuda' %}" style="text-decoration: none;">
+                        <button class="btn btnPrimario" data-bs-toggle="modal" data-bs-target="#confirmModal"
+                            id="EstiloBoton" style="width: 10em;">¡VAMOS!</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

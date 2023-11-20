@@ -1,0 +1,130 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN CLIENTE</title>
+    <link rel="icon" href="{% static 'img/LogoSinFondo_PapeleriaT_C.png' %}">
+
+    <!-- Boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Libreria de iconos font-awesome-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS y JS  Personalizado -->
+    <script src="{% static 'js/Sesiones/LoginClientes.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/Sesiones/LoginClientes.css' %}">
+
+    <!-- Boostrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!-- Google Fonts-->
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
+
+    <!-- Raleway-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap" rel="stylesheet">
+
+    <!-- Oswald -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <!-- Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom" style="justify-content: center;">
+        <a class="navbar-brand d-flex justify-content-center" href="{% url 'MarketplaceIndex' %}">
+            <img src="{% static 'img/LogoSinFondo_PapeleriaT_C.png' %}" alt="Logo" width="50" height="50"
+                class="rounded-circle mx-auto">
+        </a>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <div class="col-md-8 d-flex justify-content-center align-items-center">
+                <div class="container d-flex justify-content-center align-items-center BorderLogin"
+                    style="height: 60vh;">
+                    <form action="{% url 'Login' %}" method="post" class="p-4 border rounded col-md-6 TituloBienvenida">
+                        {% csrf_token %}
+                        <h2 class="text-center mb-4" style="color: white;">INICIO SESION</h2>
+                        <div class="mb-3">
+                            <label for="usuario" class="form-label">E-mail, Telefono o Usuario</label>
+                            <input type="text" class="form-control" id="usuario" name="usuario" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contrasena" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control " id="contrasena" name="contrasena" required>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn" id="iniciarSesionBtn" onclick="mostrarAlerta()">Iniciar
+                                Sesión</button>
+                            <a href="" class="btn ms-3">Crear Cuenta</a>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class="custom-div col-md-4 p-3" style="border-left: 2px solid rgb(102, 102, 102);">
+                <div class="row">
+                    <div class="col-md-1">
+
+                    </div>
+                    <div class="col-md-11 mt-5">
+                        <h2 class="custom-h2 text-start"> Ingresa un E-MAIL, Teléfono o Usuario de PAPELERIA T&C</h2>
+
+                    </div>
+                    <div class="custom-line"></div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+
+                    </div>
+                    <div class="col-md-11 mt-3">
+                        <h4 class="custom-h6">Reportar un problema</h4>
+                        <h6 class="custom-h5 mt-4"><a href=""><i class="fas fa-mobile-alt"></i> Olvidaste tu contraseña?
+                                <i class="fas fa-chevron-left" style="transform: rotate(180deg);"></i></a></h6>
+                        <h6 class="custom-h5 mt-4"><a href=""><i class="fas fa-user"></i> Ayuda <i
+                                    class="fas fa-chevron-left" style="transform: rotate(180deg);"></i></a></h6>
+                        
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer class=" text-center text-lg-start"
+    style="background-color: #090909; border-top: 2px solid rgb(26, 26, 26); font-family: Inter;">
+
+    <div class="text-center p-3 text-light" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <span class="link-overlay" onclick="window.location.href=loginUrl"></span>
+        <a class="text-light" href="{% url 'Login' %}">PAPELERIA T&C</a>
+    </div>
+</footer>
+
+
+
+
+</body>
+
+</html>

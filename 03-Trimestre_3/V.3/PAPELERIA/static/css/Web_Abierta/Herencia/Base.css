@@ -1,0 +1,137 @@
+body {
+
+    padding: 0;
+    margin: 0;
+    background-color: #111111;
+
+}
+
+/* NAVBAR */
+
+.text-center-vertical {
+    display: flex;
+    align-items: center;
+}
+
+.text-custom {
+    color: #ffffff;
+    font-size: 1.2em;
+    margin-left: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar-custom {
+    background-color: #121212;
+    margin-right: 0;
+    margin-left: 0;
+    border-bottom: 2px solid #3f3f3f;
+}
+
+.menu-custom {
+    background-color: #1ed760;
+    color: #ffffff;
+}
+
+.navbar-brand img {
+    margin-left: 3em;
+}
+
+/* Estilos para la barra de búsqueda */
+.navbar-custom .container-fluid form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-custom .container-fluid input[type="search"] {
+    width: 300px; /* Ajusta el ancho de la barra de búsqueda según sea necesario */
+    border-radius: 20px; /* Agrega bordes redondeados */
+    border: none;
+    padding: 8px 15px;
+    font-size: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agrega sombra para resaltar */
+}
+
+.navbar-custom .container-fluid input[type="search"]:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(30, 215, 96, 0.8); /* Cambia el color de la sombra al enfocar */
+}
+
+.navbar-custom .container-fluid button {
+    border-radius: 20px; /* Hace los bordes del botón redondeados */
+    font-size: 16px;
+    background-color: #1ed760;
+}
+
+.navbar-custom .container-fluid button:hover {
+    background-color: #1db954; /* Cambia el color al pasar el cursor por encima */
+}
+
+@media (max-width: 767px) {
+    .form-control {
+        margin-top: 1em;
+        width: 30px /* Reducir el ancho del input en pantallas pequeñas */
+    }
+    .btn {
+        margin-top: 0.5em;
+        width: 50px; /* Reducir el ancho del botón en pantallas pequeñas */
+    }
+}
+
+.navbar-custom .container-fluid {
+    justify-content: center; /* Centrar en pantallas grandes */
+}
+
+
+
+@media (max-width: 767px) {
+    .navbar-custom .container-fluid ul {
+        justify-content: flex-start; /* Alinear a la izquierda en pantallas pequeñas */
+    }
+}
+
+
+/* Segundo navbar (tambien hay css del segundo navbar arriba)*/
+
+.dropdown{
+    color:#1db954;
+}
+
+.custom-navbar .container-fluid .nav-link {
+    color: #1db954; 
+    font-family: Inter;
+}
+
+.custom-navbar {
+    background-color: #121212;
+    margin-right: 0;
+    margin-left: 0;
+    border-bottom: 2px solid #3f3f3f;
+    font-size: 0.8em;
+}
+
+/* Estilos para la barra de búsqueda */
+
+.custom-navbar .container-fluid {
+    justify-content: center; 
+}
+
+.navbar-custom:nth-of-type(2) .nav-item:first-child {
+    margin-left: 3em; 
+}
+
+.navbar-custom:nth-of-type(2) .nav-item:last-child {
+    margin-right: 3em; 
+}
+
+@media (max-width: 767px) {
+    .navbar-custom:nth-of-type(2) .nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar-custom:nth-of-type(2) .nav-item {
+        margin-right: 0.5em;
+        margin-left: 0.5em;
+    }
+}

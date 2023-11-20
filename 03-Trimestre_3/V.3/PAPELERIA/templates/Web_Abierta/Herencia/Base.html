@@ -1,0 +1,123 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papeleria T&C</title>
+    <link rel="icon" href="{% static 'img/LogoSinFondo_PapeleriaT_C.png' %}">
+
+    <!-- Boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Libreria de iconos font-awesome-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS y JS  Personalizado -->
+    {% block css %}
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/Web_Abierta/Herencia/Base.css' %}">
+    <script src="{% static 'js/Web_Abierta/Herencia/Base.js' %}"></script>
+
+    <!-- Boostrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!-- Google Fonts-->
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
+    <!-- Raleway-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap" rel="stylesheet">
+    <!-- Oswald -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <!-- Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom align-items-start custom-navbar">
+        <div class="container-fluid d-flex justify-content-between">
+            <a class="navbar-brand text-center-vertical" href="#">
+                <img src="{% static 'img/LogoSinFondo_PapeleriaT_C.png' %}" alt="Logo" width="40" height="40"
+                    class="rounded-circle">
+                <span class="text-custom textoinicio">PAPELERIA T&C</span>
+            </a>
+            <form class="d-flex justify-content-center justify-content-lg-start align-items-center flex-wrap">
+                <input class="form-control me-2 mb-2 mb-lg-0" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success rounded-pill ms-lg-2" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-custom align-items-start custom-navbar">
+        <div class="container-fluid d-flex justify-content-between">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <div class="dropdown custom-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" id="categoriasDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Categorías
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="categoriasDropdown">
+                            <li><a class="dropdown-item" href="#">Categoría 1</a></li>
+                            <li><a class="dropdown-item" href="#">Categoría 2</a></li>
+                            <li><a class="dropdown-item" href="#">Categoría 3</a></li>
+
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Ofertas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Historial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">AYUDA / PQR</a>
+                </li>
+            </ul>
+
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Crea tu cuenta</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'LoginClientes' %}">Ingresa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="contenido">
+
+        {% block contenido %}
+        {% endblock %}
+        
+    </div>
+
+    {% block js %}
+    {% endblock %}
+
+</body>
+
+</html>

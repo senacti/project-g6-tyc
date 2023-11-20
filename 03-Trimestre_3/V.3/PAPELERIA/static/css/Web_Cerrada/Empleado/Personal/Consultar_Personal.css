@@ -1,0 +1,84 @@
+
+
+@media screen and (max-device-width: 321px) {
+
+
+    .text-custom{
+        font-size: 1em;
+    }
+}
+
+/* FIN DEL NAVBAR (O HEADER)*/
+
+/* BOTON DE VUELTA Y CONFIRMACION */
+
+/* Personalizar el botón */
+.btn-primary {
+    background-color: #1db954;
+    font-weight: bold;
+}
+
+#EstiloBoton{
+    font-family: Poppins;
+    font-weight: bold;
+}
+
+/* Personalizar el modal de confirmación */
+.modal-content {
+    background-color: #1d1d1d;
+    color: #ffffff;
+
+}
+
+.modal-header {
+    background-color: #3f3f3f;
+    border-bottom: 2px solid #535353;
+    font-family: Poppins;
+}
+
+.modal-title {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+}
+
+.modal-header .btn-close {
+    border: none;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1ed760;
+}
+
+.modal-body {
+    background-color: #212121;
+    color: #ffffff;
+}
+
+.modal-footer {
+    background-color: #1d1d1d;
+    border-top: 2px solid #535353;
+}
+
+.btn.btnPrimario {
+    background-color: #1db954;
+}
+
+.btn.btnprimario:hover {
+    background-color: #1db954;
+}
+
+.btnSecundario {
+    background-color: #3f3f3f;
+    color: #ffffff;
+}
+
+.btnSecundario:hover {
+    background-color: #941313;
+}
+
+/*FIN DE BOTON DE VUELTA Y CONFIRMACION*/
+
+

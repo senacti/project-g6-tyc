@@ -1,0 +1,174 @@
+body {
+
+    padding: 0;
+    margin: 0;
+    background-color: #090909;
+    overflow-x: hidden ;
+
+
+}
+
+/* NAVBAR */
+
+.text-center-vertical {
+    display: flex;
+    align-items: center;
+}
+
+
+.navbar-custom {
+    background-color: #121212;
+    margin-right: 0;
+    margin-left: 0;
+    border-bottom: 2px solid #3f3f3f;
+}
+
+/* contenido */
+
+/* Estilos personalizados para el formulario y otros elementos */
+
+/* Estilos para el texto de la barra de navegación */
+.navbar-custom {
+    background-color: #121212;
+    margin-right: 0;
+    margin-left: 0;
+    border-bottom: 2px solid #3f3f3f;
+}
+
+.btn {
+    background-color: #1db954;
+    font-weight: bold;
+}
+
+.TituloBienvenida {
+    font-family: 'Poppins', sans-serif;
+    background-color:#121212;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 5px;
+    border-bottom: 1px solid #3d3d3d; 
+    color: white;
+    border: 2px solid #3d3d3d;
+    width: 80%; /* Cambia el ancho del formulario */
+    max-width: 600px; /* Ajusta el ancho máximo */
+}
+
+.form-control{
+    border: 2px solid black;
+}
+
+.SaludoHora {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.FuenteSaludo {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 35px;
+    
+}
+
+.FuenteSaludo:active{
+    color: #1db954;
+    font-family: Poppins;
+}
+
+/* Contenido */
+
+.custom-div {
+    background-color: #0f0f0f; 
+    height: 92vh; 
+    border-right: 1px solid rgb(36, 36, 36);
+}
+
+@media (max-width: 767px) {
+
+    .custom-div {
+        background-color: #0f0f0f; 
+        height: 50vh; 
+        border-right: 1px solid rgb(36, 36, 36);
+    }
+}
+.custom-h2 {
+    color: white;
+    font-family: Inter;
+
+}
+
+.custom-line {
+    border-bottom: 2px solid #fff;
+    width: 80%; /* Ancho de la línea */
+    margin: 20px auto; /* Margen superior e inferior de 20px, centrado horizontalmente */
+}
+
+.custom-h6 {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+a {
+    text-decoration: none;
+    color: #1db954;
+    transition: color 0.2s ease-in-out;
+}
+
+i {
+    color: #fff;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #fff;
+}
+
+i:hover {
+    color:#1db954
+}
+
+.no-pointer {
+    pointer-events: none;
+}
+
+/* BARRA DE DESPLAZAMIENTO (NO TOCAR) */
+
+::-webkit-scrollbar {
+    width: 10px; 
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.2); 
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.6); 
+    border-radius: 5px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.8); 
+}
+
+html {
+    scrollbar-width: thin; 
+    scrollbar-color: rgba(255, 255, 255, 0.6) rgba(0, 0, 0, 0.2); 
+}
+
+
+html {
+    scrollbar-width: thin; 
+    scrollbar-color: rgba(255, 255, 255, 0.6) rgba(0, 0, 0, 0.2); 
+}
+
+html::-moz-scrollbar-thumb {
+    border-radius: 5px; 
+}
+
+html::-moz-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.8); 
+}
