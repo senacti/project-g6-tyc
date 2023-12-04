@@ -1,0 +1,24 @@
+<form action="{% url 'productos:search' %}">
+    <div class="input-group">
+        <input type="text" name="q" value="{{ query }}" class="form-control" placeholder="Buscar">
+        <div class="input-group-append">
+            <input type="submit" name="" value="Buscar" class="btn btn-custom">
+        </div>
+    </div>
+</form>
+
+<style>
+    .input-group{
+        border: 1px solid #4e4e4e;
+        border-radius: 5px;
+    }
+    .btn-custom{
+        background-color: #1db954;
+        font-weight: bold;
+    }
+
+    .btn-custom:hover{
+        background-color: #14eb5f;
+        font-weight: bold;
+    }
+</style>

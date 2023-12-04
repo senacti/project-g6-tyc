@@ -1,0 +1,188 @@
+{% url 'login' as login %}
+{% url 'register' as register %}
+{% url 'carts:cart' as cart %}
+{% url 'shipping_addresses:shipping_addresses' as shipping_addresses %}
+{% url 'orders:completeds' as completeds %}
+{% url 'billing_profiles:create' as billing_profiles %}
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-custom align-items-start custom-navbar">
+    <div class="container-fluid d-flex justify-content-between">
+        <a class="navbar-brand text-center-vertical" href="{% url 'index' %}">
+            <img src="{% static 'images/LogoSinFondo_PapeleriaT_C.png' %}" alt="Logo" width="40" height="40"
+                class="rounded-circle">
+            <span class="text-custom textoinicio">PAPELERIA T&C</span>
+        </a>
+        <nav class="container-fluid d-flex justify-content-between">
+
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav justify-content-center navcustom" style="font-size: 1.2vw;">
+                    <li class="nav-item"> 
+                        <a class="nav-link {% if request.path == cart %}active{% endif %}" href="{{ cart }}"
+                        >Mi carrito <span class="fas fa-shopping-cart"></span>
+                    </a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item"> 
+                        <a class="nav-link {% if request.path == shipping_addresses %}active{% endif %}" href="{{ shipping_addresses }}"
+                        >Mis direcciones <span class="fas fa-location-arrow"></span>
+                    </a>
+                    </li>
+        
+                    <li class="nav-item"> 
+                        <a class="nav-link {% if request.path == completeds %}active{% endif %}" href="{{ completeds }}"
+                        >Mis pedidos <span class="fas fa-shipping-fast"></span>
+                    </a>
+                    </li>
+        
+                    <li class="nav-item"> 
+                        <a class="nav-link {% if request.path == billing_profiles %}active{% endif %}" href="{{ billing_profiles }}"
+                        >Mis metodos de pago <span class="fab fa-cc-stripe"></span>
+                    </a>
+                    </li>
+        
+                    {% endif %}
+                </ul>
+        
+                <ul class="navbar-nav ms-auto" style="font-size: 1.2vw;">
+                    {% if user.is_authenticated %}
+        
+                        <li class="nav-item">
+                            <a href="{% url 'logout' %}" class="nav-link">
+                                <i class="fas fa-sign-in-alt me-1"></i>
+                                Logout
+                            </a>
+                        </li>
+        
+                    {% else %}
+        
+                        <li class="nav-item">
+                            <a href="{{ login }}" class="nav-link {% if request.path == login %}active{% endif %}">
+                                <i class="fas fa-user me-1"></i> 
+                                Login
+                            </a>
+                        </li>
+        
+                        <li class="nav-item">
+                            <a href="{{ register }}" class="nav-link {% if request.path == register %}active{% endif %}">
+                                <i class="fas fa-user-plus me-1"></i>
+                                Registro
+                            </a>
+                        </li>
+        
+                    {% endif %}
+                </ul>
+            </div>
+
+        </nav>
+    </div>
+</nav>
+
+
+<style>
+    /* NAVBAR */
+
+.text-center-vertical {
+    display: flex;
+    align-items: center;
+}
+
+.text-custom {
+    color: #ffffff;
+    font-size: 1.2em;
+    margin-left: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar-custom {
+    background-color: #121212;
+    margin-right: 0;
+    margin-left: 0;
+    border-bottom: 2px solid #3f3f3f;
+}
+
+.menu-custom {
+    background-color: #1ed760;
+    color: #ffffff;
+}
+
+.navbar-brand img {
+    margin-left: 3em;
+}
+
+/* Estilos para la barra de búsqueda */
+.navbar-custom .container-fluid form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.navbar-custom .container-fluid button {
+    border-radius: 20px; /* Hace los bordes del botón redondeados */
+    font-size: 16px;
+    background-color: #1ed760;
+}
+
+.navbar-custom .container-fluid button:hover {
+    background-color: #1db954; /* Cambia el color al pasar el cursor por encima */
+}
+
+@media (max-width: 767px) {
+    .form-control {
+        margin-top: 1em;
+        width: 30px /* Reducir el ancho del input en pantallas pequeñas */
+    }
+    .btn {
+        margin-top: 0.5em;
+        width: 50px; /* Reducir el ancho del botón en pantallas pequeñas */
+    }
+}
+
+.navbar-custom .container-fluid {
+    justify-content: center; /* Centrar en pantallas grandes */
+}
+
+
+
+@media (max-width: 767px) {
+    .navbar-custom .container-fluid ul {
+        justify-content: flex-start; /* Alinear a la izquierda en pantallas pequeñas */
+    }
+}
+
+
+/* Segundo navbar (tambien hay css del segundo navbar arriba)*/
+
+.dropdown{
+    color:#1db954;
+}
+
+.custom-navbar .container-fluid .nav-link {
+    color: #1db954; 
+    font-family: Inter;
+}
+
+.custom-navbar {
+    background-color: #121212;
+    margin-right: 0;
+    margin-left: 0;
+    border-bottom: 2px solid #3f3f3f;
+    font-size: 0.8em;
+}
+
+.nav-item{
+    margin-left: 2em;
+}
+
+.custom-navbar .container-fluid .nav-link:hover{
+    color: rgb(255, 255, 255);
+}
+
+
+
+</style>
