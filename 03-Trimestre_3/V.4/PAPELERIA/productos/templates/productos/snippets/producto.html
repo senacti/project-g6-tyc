@@ -4,53 +4,57 @@
     <div class="card h-100 cardproductocustom ">
 
         {% if producto.image %}
-            <img src="{{ producto.image.url }}" alt="imagen del producto">
+        <img src="{{ producto.image.url }}" alt="imagen del producto">
         {% endif%}
-    
+
         <div class="card-body cardbodyproductocustom">
-            <h5 class="card-title text-center">{{ producto.titulo }}</h5>
+            <h5 class="card-title cardtexttitulo text-center">{{ producto.titulo }}</h5>
             <p class="card-text cardtextdescripcioncustom text-center">{{ producto.descripcion }}</p>
             <h3 class="card-text cardtextpreciocustom">{{ producto.precio | precio_format }}</h3>
             <p></p>
 
         </div>
-    
+
     </div>
 </a>
 
 
 <style>
-    .cardproductocustom{
-        border: 1px solid rgb(192, 192, 192);
-        box-shadow: 0px 5px 15px rgb(179, 179, 179);
-        transition: box-shadow 0.3s ease-in-out; 
-    }
-    .cardbodyproductocustom{
-        border-top: 1px solid rgb(190, 190, 190);
-    }
-    .cardtextpreciocustom{
-        font-size: 25px;
-    }
-    .cardtextdescripcioncustom{
-        font-size: 95%;
-    }
-    .btn-custom{
-        background-color: #1db954;
+    .cardtexttitulo {
+
+        font-weight: bold;
     }
 
-    .btn-custom:hover{
-        background-color: #14eb5f;
+    .cardtextpreciocustom {
+        font-size: 20px;
+        font-weight: bold;
     }
-    
+
+    .cardtextdescripcioncustom {
+        font-size: 95%;
+        font-weight: bold;
+    }
+
     .product-link {
         text-decoration: none;
         color: inherit;
-        transition: color 0.3s ease-in-out; /* Transición suave del color */
-        
+
     }
+
+    .cardproductocustom {
+        color: rgb(0, 0, 0);
+        background-color: rgba(255, 255, 255, 0.836);
+        font-family: Raleway;
+        font-weight: bold;
+        transition: box-shadow 0.5s ease-in-out;
+        /* Agrega la transición aquí */
+    }
+
     .cardproductocustom:hover {
-        box-shadow: 0px 5px 15px #136b32; /* Aplicar shadow al card en el hover */
+        box-shadow: 10px 0px 30px #136b32;
+        /* Aplicar shadow al card en el hover */
     }
+
     .product-link:hover {
         color: inherit;
     }

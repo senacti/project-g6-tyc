@@ -3,56 +3,84 @@
 {% load producto_extras %}
 
 {% block content %}
-    <div class="col-3">
-        {% if producto.image %}
-            <img src="{{ producto.image.url }}" alt="Imagen del producto" width="200" height="200">
-        {% endif %}
-    </div>
-    <div class="col">
-        <div class="h3 font-weight-bold text-success">
-            {{ quantity | quantity_add_format }} al carrito
+<div class="justify-content-center p-5 divdetailviewcompra">
+    <div class="row">
+        <div class="col-3">
+            {% if producto.image %}
+            <img src="{{ producto.image.url }}" alt="Imagen del producto" width="200" height="200" class="bg-custom">
+            {% endif %}
         </div>
-        <p></p>
-        <div class="">
-            <a href="{% url 'productos:producto' producto.slug %}" class="texttitulocustom">
-                {{ producto.titulo }}
-            </a>
-        </div>
-        <div class="font-weight-bold text-danger" style="font-weight: bold;">
-            {{ producto.precio | precio_format }}
-        </div>
-        <div class="row mt-4">
-            <div class="col-2 ">
-                <a href="{% url 'carts:cart' %}" class="btn btn-custom">Ver carrito</a>
+        <div class="col">
+            <div class="h3 font-weight-bold textcustomcarritoadd">
+                {{ quantity | quantity_add_format }} al carrito
             </div>
-            <div class="col-3">
-                <a href="{% url 'index' %}" class="btn btn-custom">Seguir comprando</a>
+            <p></p>
+            <div class="">
+                <a href="{% url 'productos:producto' producto.slug %}" class="texttitulocustom">
+                    {{ producto.titulo }}
+                </a>
             </div>
-        </div>
+            <div class="font-weight-bold text-danger" style="font-weight: bold;">
+                {{ producto.precio | precio_format }}
+            </div>
+            <p></p>
+            <div class="row mt-5">
+                <div class="col-2 ">
+                    <a href="{% url 'carts:cart' %}" class="btn btn-custom">Ver carrito</a>
+                </div>
+                <div class="col-3">
+                    <a href="{% url 'index' %}" class="btn btn-custom">Seguir comprando</a>
+                </div>
+            </div>
         
+        </div>
     </div>
-    <style>
-        .btn-custom{
-            background-color: #1db954;
-            border: 1px solid black;
-        }
     
-        .btn-custom:hover{
-            transition: background-color 0.5s ease-in-out;
-            background-color: #d6d6d6;
-            border: 1px solid black;
-        }
+</div>
 
-        .texttitulocustom{
-            color: black;
-            text-decoration: none;
-            font-family: Poppins;
-            font-weight: bold;
-            font-size: 20px;
-        }
+<style>
+    .btn-custom {
+        background-color: #1db954;
+        border: 1px solid black;
+    }
 
+    .btn-custom:hover {
+        transition: background-color 0.5s ease-in-out;
+        background-color: #d6d6d6;
+        border: 1px solid black;
+    }
 
-        
-    </style>
+    .texttitulocustom {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        font-family: Poppins;
+        font-weight: bold;
+        font-size: 20px;
+        transition: color 0.5s ease-in-out;
+    }
+    .texttitulocustom:hover {
+        color: #1db954;
+        text-decoration: none;
+        font-family: Poppins;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .divdetailviewcompra {
+        background-color: rgba(197, 197, 197, 0.082);
+        color: rgb(255, 255, 255);
+        border-radius: 50px;
+    }
+
+    .bg-custom {
+        background-color: white;
+        border: 2px solid black;
+    }
+    .textcustomcarritoadd{
+        font-size: 30px;
+        color: #1db954;
+        font-family: Poppins;
+        font-weight: bold;
+    }
+</style>
 {% endblock %}
-

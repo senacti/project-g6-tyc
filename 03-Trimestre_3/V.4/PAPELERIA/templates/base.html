@@ -43,22 +43,27 @@
 </head>
 
 <body>
-
-    {% include 'navbar.html' %}
-    <div class="container">
-
-        {% include 'messages.html' %}
-
-        {% block breadcrumb %}
+    <div class="main-content">
+        {% include 'navbar.html' %}
+        {% block carrousel %}
         {% endblock %}
+        <div class="container">
 
-        <div class="row mt-4 mb-4">
+            {% include 'messages.html' %}
 
-            {% block content %}
+            {% block breadcrumb %}
             {% endblock %}
 
+            <div class="row mt-4 mb-4">
+
+                {% block content %}
+                {% endblock %}
+
+            </div>
         </div>
+
     </div>
+
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
@@ -72,3 +77,42 @@
 {% endblock %}
 
 </html>
+<style>
+    /* BARRA DE DESPLAZAMIENTO (NO TOCAR) */
+
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #666666;
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    html {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.6) rgba(0, 0, 0, 0.2);
+    }
+
+
+    html {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.6) rgba(0, 0, 0, 0.2);
+    }
+
+    html::-moz-scrollbar-thumb {
+        border-radius: 5px;
+    }
+
+    html::-moz-scrollbar-thumb:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+</style>

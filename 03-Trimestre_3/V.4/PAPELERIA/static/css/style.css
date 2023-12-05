@@ -2,6 +2,7 @@ body {
 
     padding: 0;
     margin: 0;
-    background-color: #e2e2e2;
-
+    background: linear-gradient(to bottom, #380a75, rgb(29, 29, 29));
+    background-attachment: fixed;
+    color: white;
 }

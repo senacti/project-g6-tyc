@@ -1,7 +1,8 @@
 <div class="card">
     <h5 class="card-header"></h5>
-    <div class="card-body">
+    <div class="card-body cardbodycustomaddress">
         <h5 class="card-title">{{ shipping_address.address}}</h5>
+        <h6>Linea 1: {{ shipping_address.line1 }} -Linea 2: {{ shipping_address.line2 }}</h6>
         <div class="card-title">
             {{ shipping_address.reference }}
         </div>
@@ -27,6 +28,10 @@
 </div>
 
 <style>
+    .cardbodycustomaddress{
+        color: black;
+    }
+    
     .btn-custom {
         background-color: #1db954;
         border: 1px solid black;

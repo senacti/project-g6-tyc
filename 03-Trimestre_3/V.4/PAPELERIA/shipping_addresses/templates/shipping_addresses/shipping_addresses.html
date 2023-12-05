@@ -5,7 +5,7 @@
     <div class="h3">
         Mis direcciones
     </div>
-    <a href="{% url 'shipping_addresses:create' %}" style="text-decoration:underline; color: #3f3f3f; font-size: 20px;">Agregar nueva direccion</a>
+    <a href="{% url 'shipping_addresses:create' %}" class="btn btn-success" style="border: 1px solid black; font-family:raleway; text-decoration:none; color: #ffffff; font-size: 20px;">Agregar nueva direccion</a>
     <div class="mt-2 mb-5">
         {% for shipping_address in object_list %}
         <div class="mt-2">

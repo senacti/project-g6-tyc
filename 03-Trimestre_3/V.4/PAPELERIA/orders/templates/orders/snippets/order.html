@@ -1,6 +1,6 @@
 {% load producto_extras %}
 
-<div class="card mb-2">
+<div class="card mb-2 cardtextordercustom">
     <div class="card-header">
         <div class="row">
 
@@ -41,7 +41,7 @@
                 <div class="row">
                     <div class="col-4"> 
                         {% if producto.image %}
-                        <img src="{{ producto.image.url }}" alt="" width="60" height="60">
+                        <img src="{{ producto.image.url }}" alt="" width="60" height="60" >
                         {% endif %}
                     </div>
                     <div class="col-4">
@@ -65,3 +65,9 @@
         {% endfor %}
     </div>
 </div>
+
+<style>
+    .cardtextordercustom{
+        color: black;
+    }
+</style>

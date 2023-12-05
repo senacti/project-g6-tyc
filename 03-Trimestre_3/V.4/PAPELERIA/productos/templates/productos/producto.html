@@ -1,26 +1,45 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="col-3">
+<div class="justify-content-center p-5 divdetailviewcompra">
+    <div class="row">
+        <div class="col-3">
 
-        {% if producto.image %}
-        <img src="{{ producto.image.url }}" alt="Imagen Del Producto" width="200" height="200">
-        {% endif %}
-
+            {% if producto.image %}
+                <div class="imagenalrededorcustom">
+                    <img src="{{ producto.image.url }}" alt="Imagen Del Producto" width="200" height="200" class="bg-custom">
+                </div>
+            {% endif %}
+    
+        </div>
+        <div class="col">
+    
+            <div class="h1">
+                {{ producto.titulo }}
+            </div>
+            <div class="h5 font-weight-bold">
+                Precio: <span class="text-danger">${{ producto.precio }}</span>
+            </div>
+            <div class="">
+                <p>{{ producto.descripcion }}</p>
+            </div>
+            <div>
+                {% include 'carts/snippets/add.html' %}
+            </div>
+        </div>
     </div>
-    <div class="col">
-
-        <div class="h1">
-            {{ producto.titulo }}
-        </div>
-        <div class="h5 font-weight-bold">
-            Precio: <span class="text-danger">${{ producto.precio }}</span>
-        </div>
-        <div class="">
-            <p>{{ producto.descripcion }}</p>
-        </div>
-        <div>
-            {% include 'carts/snippets/add.html' %}
-        </div>
-    </div>
+    
+</div>
+    
+<style>
+    .divdetailviewcompra{
+        background-color: rgba(197, 197, 197, 0.082);
+        color: rgb(255, 255, 255);
+        border-radius: 50px;
+    }
+    .bg-custom{
+        background-color: white;
+        border: 2px solid black;
+    }
+</style>
 {% endblock %}
