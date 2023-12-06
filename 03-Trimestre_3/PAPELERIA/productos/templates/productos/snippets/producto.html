@@ -1,0 +1,61 @@
+{% load producto_extras %}
+
+<a href="{% url 'productos:producto' producto.slug %}" class="product-link">
+    <div class="card h-100 cardproductocustom ">
+
+        {% if producto.image %}
+        <img src="{{ producto.image.url }}" alt="imagen del producto">
+        {% endif%}
+
+        <div class="card-body cardbodyproductocustom">
+            <h5 class="card-title cardtexttitulo text-center">{{ producto.titulo }}</h5>
+            <p class="card-text cardtextdescripcioncustom text-center">{{ producto.descripcion }}</p>
+            <h3 class="card-text cardtextpreciocustom">{{ producto.precio | precio_format }}</h3>
+            <p></p>
+
+        </div>
+
+    </div>
+</a>
+
+
+<style>
+    .cardtexttitulo {
+
+        font-weight: bold;
+    }
+
+    .cardtextpreciocustom {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .cardtextdescripcioncustom {
+        font-size: 95%;
+        font-weight: bold;
+    }
+
+    .product-link {
+        text-decoration: none;
+        color: inherit;
+
+    }
+
+    .cardproductocustom {
+        color: rgb(0, 0, 0);
+        background-color: rgba(255, 255, 255, 0.836);
+        font-family: Raleway;
+        font-weight: bold;
+        transition: box-shadow 0.5s ease-in-out;
+        /* Agrega la transición aquí */
+    }
+
+    .cardproductocustom:hover {
+        box-shadow: 10px 0px 30px #136b32;
+        /* Aplicar shadow al card en el hover */
+    }
+
+    .product-link:hover {
+        color: inherit;
+    }
+</style>

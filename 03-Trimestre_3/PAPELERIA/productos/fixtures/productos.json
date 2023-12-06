@@ -1,0 +1,26 @@
+[
+{
+    "model": "productos.producto",
+    "pk": 1,
+    "fields": {
+        "titulo": "Playera para caballero",
+        "descripcion": "Playera para caballero",
+        "precio": "10.00",
+        "slug": "playera-para-caballero",
+        "image": "productos/pngtree-realistic-plain-black-t-shirt-mockup-png-image_7103580.png",
+        "created_at": "2023-11-30T01:06:36.914Z"
+    }
+},
+{
+    "model": "productos.producto",
+    "pk": 2,
+    "fields": {
+        "titulo": "Playera para dama",
+        "descripcion": "Playera para dama",
+        "precio": "15.00",
+        "slug": "playera-para-dama",
+        "image": "productos/negro-peinado-dama.png",
+        "created_at": "2023-11-30T02:20:24.666Z"
+    }
+}
+]

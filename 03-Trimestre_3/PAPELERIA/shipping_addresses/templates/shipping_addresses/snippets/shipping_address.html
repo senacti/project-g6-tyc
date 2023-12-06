@@ -1,0 +1,72 @@
+<div class="card">
+    <h5 class="card-header"></h5>
+    <div class="card-body cardbodycustomaddress">
+        <h5 class="card-title">{{ shipping_address.address}}</h5>
+        <h6>Linea 1: {{ shipping_address.line1 }} -Linea 2: {{ shipping_address.line2 }}</h6>
+        <div class="card-title">
+            {{ shipping_address.reference }}
+        </div>
+        <div class="card-title">
+            {{ shipping_address.postal_code }}
+        </div>
+
+        {% if edit %}
+        <div class="mt-2">
+            <a href="{% url 'shipping_addresses:update' shipping_address.pk %}" class="btn btn-custom">Editar</a>
+            {% if shipping_address.default %}
+            <div class="text-custom3 mt-3">
+                Direccion Principal
+            </div>
+            {% else %}
+            <a href="{% url 'shipping_addresses:default' shipping_address.pk %}" class="btn btn-warning">Default</a>
+            <a href="{% url 'shipping_addresses:delete' shipping_address.pk %}" class="btn btn-danger">Eliminar</a>
+            {% endif %}
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+
+<style>
+    .cardbodycustomaddress{
+        color: black;
+    }
+    
+    .btn-custom {
+        background-color: #1db954;
+        border: 1px solid black;
+    }
+
+    .btn-custom:hover {
+        transition: background-color 0.5s ease-in-out;
+        background-color: #d6d6d6;
+        border: 1px solid black;
+    }
+
+    .btn-warning {
+        border: 1px solid black;
+    }
+
+    .btn-warning:hover {
+        transition: background-color 0.5s ease-in-out;
+        background-color: #d6d6d6;
+        border: 1px solid black;
+    }
+
+    .btn-danger {
+
+        border: 1px solid black;
+    }
+
+    .btn-custom:hover {
+        transition: background-color 0.5s ease-in-out;
+        background-color: #d6d6d6;
+        border: 1px solid black;
+    }
+
+    .text-custom3{
+        font-family: Raleway;
+        font-weight: bold;
+        font-size: 20px;
+    }
+</style>

@@ -1,0 +1,73 @@
+{% load producto_extras %}
+
+<div class="card mb-2 cardtextordercustom">
+    <div class="card-header">
+        <div class="row">
+
+            <div class="col-4">
+                <div class="text-uppercase">
+                    Pedido realizado
+                </div>
+                <div class="">
+                    {{ order.created_at }}
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="text-uppercase">
+                    Total
+                </div>
+                <div class="">
+                    {{ order.total | precio_format }}
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="text-uppercase">
+                    Enviado a
+                </div>
+                <div class="">
+                    {{ order.shipping_address }}
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="card-body">
+        {% for cp in order.cart.productos_related %}
+
+            {% with producto=cp.producto %}
+
+                <div class="row">
+                    <div class="col-4"> 
+                        {% if producto.image %}
+                        <img src="{{ producto.image.url }}" alt="" width="60" height="60" >
+                        {% endif %}
+                    </div>
+                    <div class="col-4">
+                        <div class="">
+                            {{ producto.titulo }}
+                        </div>
+                        <div class="text-danger">
+                            {{ producto.precio | precio_format }}
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="">
+                            cantidad
+                        </div>
+                        <div class="">
+                            {{ cp.quantity }}
+                        </div>
+                    </div>
+                </div>
+            {% endwith %}
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    .cardtextordercustom{
+        color: black;
+    }
+</style>

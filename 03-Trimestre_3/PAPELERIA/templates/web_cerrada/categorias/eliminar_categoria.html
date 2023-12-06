@@ -1,0 +1,52 @@
+{% extends 'baseEmpleados.html' %}
+
+{% block contenido %}
+<div class="container logincustom mt-5 pb-3 mb-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mt-4 customdivform">
+            <h2 class="text-center mb-4 letracustomact">Eliminar Categoría</h2>
+            <p class="text-center">¿Estás seguro de que deseas eliminar esta categoría?</p>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="text-center">
+                    <button type="submit" class="btn btn-danger mt-3">Eliminar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<style>
+    /* Tus estilos personalizados */
+    .customdivform {
+        color: #1db954;
+        font-family: Raleway;
+        font-weight: 1000;
+    }
+    
+    .letracustomact {
+        font-family: poppins;
+        font-weight: bold;
+        color: white;
+    }
+    
+    .logincustom {
+        background-color: #5d5d5d2f;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 50px;
+    }
+    
+    .btn-danger {
+        background-color: #dc3545;
+        border: 1px solid black;
+        font-weight: bold;
+        font-family: Raleway;
+        font-size: 20px;
+    }
+    
+    .btn-danger:hover {
+        transition: background-color 0.5s ease-in-out;
+        background-color: #d6d6d6;
+        border: 1px solid black;
+    }
+</style>
+{% endblock %}
