@@ -10,6 +10,7 @@ from orders.utils import get_or_create_order
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
+
 def validate(request):
     cart = get_or_create_cart(request)
     order = get_or_create_order(cart, request)

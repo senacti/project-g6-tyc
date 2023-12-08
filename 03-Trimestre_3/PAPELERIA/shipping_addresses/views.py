@@ -7,6 +7,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.http.response import HttpResponse
 
+from django.http import JsonResponse
+
 from django.shortcuts import render
 from django.urls import reverse
 from django.urls import reverse_lazy
@@ -108,3 +110,15 @@ def default(request, pk):
     shipping_address.update_default(True)
 
     return redirect('shipping_addresses:shipping_addresses')
+
+def shipping_address_detail(request, shipping_address_id):
+    shipping_address = ShippingAddress.objects.get(pk=shipping_address_id)
+    municipios = shipping_address.get_municipios(shipping_address.department)
+    return render(request, 'shipping_address_detail.html', {'shipping_address': shipping_address, 'municipios': municipios})
+
+def get_municipalities(request):
+    if request.method == 'GET' and 'department' in request.GET:
+        department = request.GET['department']
+        cities = ShippingAddress.get_municipios(department)
+        return JsonResponse(cities, safe=False)
+    return JsonResponse([], safe=False)

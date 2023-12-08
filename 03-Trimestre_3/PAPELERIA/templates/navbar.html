@@ -4,6 +4,7 @@
 {% url 'shipping_addresses:shipping_addresses' as shipping_addresses %}
 {% url 'orders:completeds' as completeds %}
 {% url 'billing_profiles:create' as billing_profiles %}
+{% url 'menu_principalEmpleados' as menuempleados %}
 {% load static %}
 
 <nav class="navbar navbar-expand-lg navbar-custom align-items-start custom-navbar mt-2 mb-2">
@@ -12,6 +13,7 @@
             <img src="{% static 'images/LogoSinFondo_PapeleriaT_C.png' %}" alt="Logo" width="30" height="30"
                 class="rounded-circle">
             <span class="text-custom textoinicio">PAPELERIA T&C</span>
+
         </a>
         <nav class="container-fluid d-flex justify-content-between px-5">
 
@@ -31,8 +33,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == completeds %}active{% endif %}"
-                            href="{{ completeds }}">Mis
-                            pedidos <span class="fas fa-shipping-fast"></span>
+                            href="{{ completeds }}">Mis pedidos <span class="fas fa-shipping-fast"></span>
                         </a>
                     </li>
 
@@ -41,6 +42,7 @@
                             href="{{ billing_profiles }}">Mis metodos de pago <span class="fab fa-cc-stripe"></span>
                         </a>
                     </li>
+
 
                     {% endif %}
                 </ul>
@@ -55,6 +57,14 @@
                         </a>
                     </li>
 
+                    <div class="nav-item username-container">
+                        <div href="" class="nav-link" style="color: white;">
+                            <i class="fas fa-user"></i>
+                            {{ user.username }}
+                        </div>
+                    </div>
+
+
                     {% else %}
                     <li class="nav-item">
                         <a href="{{ register }}" class="nav-link {% if request.path == register %}active{% endif %}">
@@ -68,12 +78,32 @@
                         </a>
                     </li>
 
+
+
                     {% endif %}
                     <li class="carritocustom nav-item ">
                         <a class="nav-link {% if request.path == cart %}active{% endif %}" href="{{ cart }}">
                             <span class="fas fa-shopping-cart cart-icon"></span>
                         </a>
                     </li>
+                    {% if user.groups.all.0.name == 'Empleado' %}
+                    <li class="carritocustom nav-item ">
+                        <a class="nav-link {% if request.path == menu_empleados %}active{% endif %}"
+                            href="{% url 'menu_empleados' %}">
+                            <span class="fas fa-lock"></span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if user.groups.all.0.name == 'Admin' %}
+                    <li class="carritocustom nav-item ">
+                        <a class="nav-link {% if request.path == menu_empleados %}active{% endif %}"
+                            href="{% url 'admin:index' %}">
+                            <span class="fas fa-cogs"></span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    
+
                 </ul>
             </div>
 
@@ -195,7 +225,7 @@
     }
 
     .nav-link {
-        margin-left: 2em;
+        margin-left: 1em;
     }
 
     .cart-icon {
@@ -205,5 +235,23 @@
 
     .cart-icon:hover {
         color: #1db954;
+    }
+
+    .username-container {
+        cursor: default;
+        /* Evita que el cursor cambie al pasar por encima */
+        text-decoration: none;
+        /* Elimina cualquier decoración al pasar por encima */
+        color: white;
+        /* Mantén el color del texto igual al original */
+    }
+
+    .username-container:hover {
+        cursor: default;
+        /* Evita que el cursor cambie al pasar por encima */
+        text-decoration: none;
+        /* Elimina cualquier decoración al pasar por encima */
+        color: white;
+        /* Mantén el color del texto igual al original */
     }
 </style>

@@ -155,6 +155,8 @@ EMAIL_HOST_USER = 'tycpapeleria@gmail.com'
 EMAIL_HOST_PASSWORD = 'wrvz irnj kvdh rkee'
 EMAIL_USE_TLS = True
 
+STRIPE_PUBLIC_KEY = 'pk_test_51OKTbrCGVXhDaRqC5tztTGIlLs2hx94AxEB8rOvyeet3HU2AfrC7dH0kq89QLmd37oCnnusn7xefmq8flSKFXSfs00MvbjGg8O'
+STRIPE_PRIVATE_KEY = 'sk_test_51OKTbrCGVXhDaRqCBmkGWWq3n0FgoTmgBL1MWdnBDgNm4nrwAz138h4tLMtis6azK5sdzRVgZeNweZXPm8oNAh3200kgqmGS1Z'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/

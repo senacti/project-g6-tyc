@@ -54,6 +54,7 @@ class ProductoSearchListView(ListView):
 
         return context
 
+
 class ProductosListView(ListView):
     model = Producto
     template_name = 'web_cerrada/productos/lista_productos.html'

@@ -1,24 +1,46 @@
-from django.forms import ModelForm
+from django import forms
 from .models import ShippingAddress
 
-class ShippingAddressForm(ModelForm):
+class ShippingAddressForm(forms.ModelForm):
+    department = forms.CharField(
+        label='Departamento',
+        widget=forms.Select(choices=ShippingAddress.DEPARTMENT_CHOICES, attrs={'class': 'form-control'})
+    )
+
+    municipality = forms.CharField(
+        label='Municipio',
+        widget=forms.Select(choices=[], attrs={'class': 'form-control'})
+    )
+
     class Meta:
         model = ShippingAddress
         fields = [
-            'line1', 'line2', 'city', 'state', 'country', 'postal_code', 'reference'
+             'street_type', 'line1', 'line2', 'line3', 'department', 'municipality', 'postal_code', 'is_home_or_work', 'reference'
         ]
         labels = {
-            'line1': 'Calle',
-            'line2': 'Carrera',
-            'city': 'Ciudad',
-            'state': 'Estado',
-            'country': 'Pais',
+            'is_home_or_work': 'Es casa o trabajo',
+            'street_type': 'tipo de calle',
+            'line1': 'Avenida',
+            'line2': 'Número',
+            'line3': '',
             'postal_code': 'Codigo Postal',
             'reference': 'Referencia',
         }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
+        self.fields['department'].widget.attrs.update({
+            'class': 'form-control'
+        })
+
+        self.fields['municipality'].widget.attrs.update({
+            'class': 'form-control',
+        })
+
+        self.fields['street_type'].widget.attrs.update({
+            'class': 'form-control'
+        })
 
         self.fields['line1'].widget.attrs.update({
             'class': 'form-control'
@@ -27,22 +49,18 @@ class ShippingAddressForm(ModelForm):
         self.fields['line2'].widget.attrs.update({
             'class': 'form-control'
         })
-        
-        self.fields['city'].widget.attrs.update({
-            'class': 'form-control'
-        })
-        
-        self.fields['state'].widget.attrs.update({
-            'class': 'form-control'
-        })
 
-        self.fields['country'].widget.attrs.update({
+        self.fields['line3'].widget.attrs.update({
             'class': 'form-control'
         })
 
         self.fields['postal_code'].widget.attrs.update({
             'class': 'form-control',
             'placeholder': '0000'
+        })
+
+        self.fields['is_home_or_work'].widget.attrs.update({
+            'class': 'form-control',
         })
 
         self.fields['reference'].widget.attrs.update({

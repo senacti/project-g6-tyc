@@ -1,26 +1,44 @@
 {% extends 'base.html' %}
 
 {% block breadcrumb %}
-    {% include 'orders/snippets/breadcrumb.html' %}
+{% include 'orders/snippets/breadcrumb.html' %}
 {% endblock %}
 
 {% block content %}
-    <div class="col">
-        <div class="h3">
-            Selecciona una direccion de envio
-        </div>
-        <div class="mt-2">
-            {% for shipping_address in shipping_addresses %}
-            <div class="card mb-2">
-                <div class="card-body">
-                    <h5 class="card-title">{{ shipping_address.address }}</h5>
-                    <p class="card-title">{{ shipping_address.postal_code }}</p>
-                    <a href="{% url 'orders:check_address' shipping_address.pk %}" class="btn btn-warning">
-                        Seleccionar
-                    </a>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
+<div class="col">
+    <div class="h3">
+        Selecciona una direccion de envio
     </div>
+    <div class="mt-2">
+        {% for shipping_address in shipping_addresses %}
+        <div class="card mb-2" style="color: black;">
+            <div class="card-body">
+                <h4 class="card-title">{{ shipping_address.address}}</h4>
+                <p></p>
+                <h5>{{ shipping_address.address_countrydetail }}</h5>
+                <h5>{{ shipping_address.address_mundetail }}</h5>
+                <div class="card-title mt-3">
+                    <h6>Codigo Postal: {{ shipping_address.postal_code }}</h6>
+                </div>
+                <a href="{% url 'orders:check_address' shipping_address.pk %}" class="btn btn-custom">
+                    Seleccionar
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    .btn-custom {
+        background-color: #1db954;
+        border: 1px solid black;
+    }
+
+    .btn-custom:hover {
+        transition: background-color 0.5s ease-in-out;
+        background-color: #d6d6d6;
+        border: 1px solid black;
+    }
+</style>
 {% endblock %}
