@@ -41,7 +41,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
 
-    
+
 
 </head>
 
@@ -81,6 +81,23 @@
 
 </html>
 <style>
+    .background-one {
+        background: linear-gradient(to bottom, #380a75, rgb(29, 29, 29)) fixed;
+    }
+
+    .background-two {
+        background: linear-gradient(to bottom, #07751f, rgb(29, 29, 29)) fixed;
+    }
+
+    body {
+
+        padding: 0;
+        margin: 0;
+        background: linear-gradient(to bottom, #380a75, rgb(29, 29, 29));
+        background-attachment: fixed;
+        color: white;
+    }
+
     /* BARRA DE DESPLAZAMIENTO (NO TOCAR) */
 
     ::-webkit-scrollbar {
@@ -119,3 +136,20 @@
         background-color: rgba(255, 255, 255, 0.8);
     }
 </style>
+<script>
+     const changeBackgroundBtn = document.getElementById('changeBackgroundBtn');
+    let isBackgroundOne = true;
+    const body = document.body;
+
+    changeBackgroundBtn.addEventListener('click', function() {
+        if (isBackgroundOne) {
+            body.classList.remove('background-one');
+            body.classList.add('background-two');
+        } else {
+            body.classList.remove('background-two');
+            body.classList.add('background-one');
+        }
+
+        isBackgroundOne = !isBackgroundOne;
+    });
+</script>

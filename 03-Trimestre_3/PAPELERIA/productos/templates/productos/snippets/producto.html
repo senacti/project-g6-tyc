@@ -4,10 +4,11 @@
     <div class="card h-100 cardproductocustom ">
 
         {% if producto.image %}
-        <img src="{{ producto.image.url }}" alt="imagen del producto">
+        <img src="{{ producto.image.url }}" alt="imagen del producto" >
         {% endif%}
 
         <div class="card-body cardbodyproductocustom">
+            <p></p>
             <h5 class="card-title cardtexttitulo text-center">{{ producto.titulo }}</h5>
             <p class="card-text cardtextdescripcioncustom text-center">{{ producto.descripcion }}</p>
             <h3 class="card-text cardtextpreciocustom">{{ producto.precio | precio_format }}</h3>
@@ -42,6 +43,9 @@
     }
 
     .cardproductocustom {
+        border: 3px solid black;
+        border-bottom-right-radius: 50px;
+        border-bottom-left-radius: 50px;
         color: rgb(0, 0, 0);
         background-color: rgba(255, 255, 255, 0.836);
         font-family: Raleway;
@@ -51,7 +55,7 @@
     }
 
     .cardproductocustom:hover {
-        box-shadow: 10px 0px 30px #136b32;
+        box-shadow: 0px 0px 30px #674396;
         /* Aplicar shadow al card en el hover */
     }
 

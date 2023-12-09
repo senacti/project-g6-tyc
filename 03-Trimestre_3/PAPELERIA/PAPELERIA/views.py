@@ -38,7 +38,7 @@ def login_view(request):
             return redirect('menu_empleados')
         elif request.user.groups.filter(name='Admin').exists():
             print("El usuario es Admin")
-            return redirect('/admin')
+            return redirect('index')
         else:
             print("El usuario NO pertenece al grupo 'Empleado'")
             return redirect('index')
@@ -60,7 +60,7 @@ def login_view(request):
                 return redirect('menu_empleados')
             elif user.groups.filter(name='Admin').exists():
                 
-                return redirect('/admin')
+                return redirect('index')
             else:
                 return redirect('index')
 
