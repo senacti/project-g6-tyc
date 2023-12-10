@@ -7,10 +7,7 @@
             <h2 class="text-center mb-4 letracustomact">Actualizar Promoción</h2>
             <form method="POST">
                 {% csrf_token %}
-                <div class="mb-3">
-                    <label for="id_code" class="form-label">Código</label>
-                    <input type="text" name="code" class="form-control" value="{{ object.code }}">
-                </div>
+                
                 <div class="mb-3">
                     <label for="id_discount" class="form-label">Descuento</label>
                     <input type="text" name="discount" class="form-control" value="{{ object.discount }}">
@@ -22,6 +19,10 @@
                 <div class="mb-3">
                     <label for="id_valid_to" class="form-label">Válido Hasta</label>
                     <input type="date" name="valid_to" class="form-control" value="{{ object.valid_to }}">
+                </div>
+                <div class="mb-3">
+                    <label for="id_used" class="form-label">Usado</label>
+                    <input type="checkbox" name="used" value="{{ object.used }}">
                 </div>
                 <div class="text-center">
                     <button type="submit" class="btn btn btn-custom mt-3">Actualizar</button>
