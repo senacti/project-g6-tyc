@@ -1,0 +1,103 @@
+{% extends 'baseEmpleados.html' %}
+
+{% load static %}
+
+{% block title %}
+
+Productos
+
+{% endblock %}
+
+
+{% block js %}
+
+<script src=""></script>
+
+{% endblock %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/Web_Cerrada/basemodelos.css' %}">
+
+{% endblock %}
+
+{% block contenido %}
+
+    <div class="container mt-4">
+
+        <div class="col-md-12 custom-border link1">
+
+            <p class="text-center fs-2 TituloBienvenida" style="color: white; ">PRODUCTOS</p>
+            <div class="row">
+
+                <div class="col-md-8 text-center-vertical">
+                    <div class="col-md-12">
+                        <main class="Mitad2">
+                            <h1 class="NoticiasLetra"> ¿QUE ES "PRODUCTOS"?</h1>
+                        </main>
+                        <main class="Mitad2-2">
+                            <div class="DescripcionProveedores">
+                                <h1 class="LetraDescripcionProveedores">
+                                    El módulo de productos es donde gestionamos cada artículo que ofrecemos. Aquí añadimos, actualizamos o eliminamos productos para mantener nuestra oferta actualizada y atractiva para nuestros clientes.
+                                </h1>
+                            </div>
+                        </main>
+                    </div>
+
+                </div>
+                <div class="col-md-4 text-center contenidoInv">
+                    <h2 class="TituloContenido2">SECCIONES</h2>
+                    <div class="row">
+                        <div class="col-md-12 mb-5 ">
+                            <div class="imagenes-Modulos">
+                                <a href="{% url 'productos:lista_productos' %}">
+                                    <div class="ImagenCuadroIconos">
+                                        <img src="" alt="Imagen 1"
+                                            class="ZoomClick">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+
+
+        </div>
+
+    </div>
+    <div class="container mt-4 mb-3">
+
+        <div class="col-md-12 custom-border link1">
+
+            <p class="text-center fs-2 TituloBienvenida" style="color: white; "> PARA QUE SIRVE? </p>
+            <div class="row">
+
+                <div class="col-md-12 text-center-vertical">
+                    <div class="col-md-12">
+                        <main class="Mitad3-3">
+                            <main class="ModificarProveedoresContexto">
+                                <h1 class="ContextoLetraTitulo"><img src="" alt="" style="width: 5%;"> Gestionar Productos </h1>
+                                <div class="ContextoProveedores">
+                                    <h4>"Los productos son los artículos únicos que ofrecemos. Gestionarlos implica añadir, actualizar o eliminar productos para mantener una presentación precisa y atractiva. Como empleados, tu tarea es mantener esta colección actualizada para una experiencia de compra satisfactoria."</h4>
+                                </div>
+                            </main>
+                            
+                        </main>
+                    </div>
+
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endblock %}

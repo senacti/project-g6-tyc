@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orden completada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h3 {
+            color: #333;
+        }
+        p {
+            color: #555;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #007bff;
+            background-color: #fff;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+        .btn:hover {
+            color: #fff;
+            background-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Hola {{ user.username }}, ¡tu pedido ha sido enviado!</h3>
+        <p>¡Gracias por confiar en nuestra Papelería T&C Tu pedido está en camino.</p>
+        <p>Puedes <a href="{{ next_url }}" target="_blank" class="btn">ver tus pedidos aquí</a>.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<div class="mb-5">
+    <div class="container-sm p-5 rounded text-dark logincustom">
+        <form method="post" class="needs-validation" novalidate>
+            {% csrf_token %}
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        {{ form.department.label_tag }}
+                        {{ form.department }}
+                        {% if form.department.errors %}
+                        {{ form.department.errors }}
+                        {% endif %}
+
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        {{ form.municipality.label_tag }}
+                        {{ form.municipality }}
+                        {% if form.municipality.errors %}
+                        {{ form.municipality.errors }}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group mb-3">
+                        {{ form.street_type.label_tag }}
+                        {{ form.street_type }}
+                        {% if form.street_type.errors %}
+                        {{ form.street_type.errors }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group mb-3">
+                        {{ form.line1.label_tag }}
+                        {{ form.line1 }}
+                        {% if form.line1.errors %}
+                        {{ form.line1.errors }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group mb-3">
+                        {{ form.line2.label_tag }}
+                        <input type="text" name="{{ form.line2.name }}" class="form-control" placeholder="#"
+                            value="{{ form.line2.value|default_if_none:'' }}">
+                        {% if form.line2.errors %}
+                        {{ form.line2.errors }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group mb-3">
+                        {{ form.line3.label_tag }}
+                        <input type="text" name="{{ form.line3.name }}" class="form-control" placeholder="-"
+                            value="{{ form.line3.value|default_if_none:'' }}">
+                        {% if form.line3.errors %}
+                        {{ form.line3.errors }}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        {{ form.postal_code.label_tag }}
+                        {{ form.postal_code }}
+                        {% if form.postal_code.errors %}
+                        {{ form.postal_code.errors }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        {{ form.is_home_or_work.label_tag }}
+                        {{ form.is_home_or_work }}
+                        {% if form.is_home_or_work.errors %}
+                        {{ form.is_home_or_work.errors }}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group mb-3">
+                {{ form.reference.label_tag }}
+                {{ form.reference }}
+                {% if form.reference.errors %}
+                {{ form.reference.errors }}
+                {% endif %}
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-custom">{{ message }}</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    .logincustom {
+        color: white;
+        background-color: rgb(247, 247, 247, 0.8);
+        border: 3px solid black;
+    }
+
+    .btn-custom {
+        background-color: #1db954;
+        border: 1px solid black;
+        font-weight: bold;
+    }
+
+    .btn-custom:hover {
+        transition: background-color 0.5s ease-in-out;
+        background-color: #d6d6d6;
+        border: 1px solid black;
+    }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#id_department').change(function () {
+            var selectedDepartment = $(this).val();
+            var municipalityField = $('#id_municipality');
+
+            $.ajax({
+                url: '/direcciones/get_municipalities/',
+                method: 'GET',
+                data: {
+                    department: selectedDepartment
+                },
+                success: function (data) {
+                    municipalityField.empty();
+
+                    $.each(data, function (key, value) {
+                        municipalityField.append($('<option></option>').attr('value', value).text(value));
+                    });
+                }
+            });
+        });
+        $('#id_street_type').change(function () {
+            var selectedStreetType = $(this).children("option:selected").text();
+            $('label[for="id_line1"]').text(selectedStreetType);
+        });
+        $(document).ready(function () {
+            // Valores predeterminados para los campos de selección
+            var defaultDepartment = "{{ form.instance.department }}"; // Reemplaza con el valor predeterminado
+            var defaultHomeOrWork = "{{ form.instance.is_home_or_work }}"; // Reemplaza con el valor predeterminado
+
+            // Establecer valores predeterminados para los campos de selección
+            $('#id_department').val(defaultDepartment);
+            $('#id_is_home_or_work').val(defaultHomeOrWork);
+        });
+    });
+</script>
