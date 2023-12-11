@@ -10,19 +10,43 @@
 
 ## 🌍 *__Objetivo General__* 🌍
 
-Desarrollar un software para la empresa 'PAPELERIA NUEVA ESCUELA', el cual permitirá optimizar los procesos de compra y venta, así como la gestión del inventario, con el propósito de mejorar la rentabilidad y la eficiencia operativa de la empresa.
+El objetivo principal de este proyecto consiste en desarrollar un programa web integral para la gestión de una papelería, que no solo optimice los procesos de compra y venta, sino que también incorpore un sistema en línea para transacciones virtuales. La implementación de este software tiene como propósito primordial la automatización de tareas manuales, la reducción de errores y la mejora de la eficiencia en la gestión de la información. El resultado esperado es aumentar la rentabilidad y la eficiencia operativa de la empresa, tanto en el entorno físico como en el virtual.
 
 ## 🔑 *__Objetivos Especificos__* 🔑
 
-- **Optimizar el Inventario:** Implementar un sistema para gestionar con precisión las existencias de productos, asegurando un flujo eficiente y evitando excesos o faltantes.
+- **Incrementar la Participación en Compras en Línea:
+  Aumentar la cantidad de clientes que realizan compras a través de la plataforma en línea en los primeros seis meses.
 
-- **Simplificar Compras:** Facilitar el proceso de compras a proveedores mediante la generación de órdenes de compra, el seguimiento de entregas y la actualización automática del inventario.
 
-- **Control Financiero:** Desarrollar una función de control de caja para mantener un registro exacto de las transacciones de efectivo, facilitando el seguimiento de ingresos y gastos.
+- **Aumentar la Frecuencia de Compras:
+  Incentivar un aumento en la frecuencia de compras por cliente mediante programas de recompensas y promociones exclusivas.
+
+
+
+- **Aumentar la Retención de Clientes:
+   Lograr una tasa de retención de clientes mediante la implementación de un programa de fidelización y notificaciones personalizadas.
+
+
+- **Reducir el Tiempo de Procesamiento de Órdenes:
+    Disminuir el tiempo promedio de procesamiento de órdenes mediante la automatización de los flujos de trabajo.
+  
+
+- **Facilitar la Promoción y Ofertas Especiales:
+    Incrementar la participación en promociones en línea durante el primer trimestre de implementación.
+  
+
+- **Mejorar la Experiencia del Cliente:
+   Aumentar la tasa de satisfacción del cliente a través de una interfaz de usuario intuitiva y funcionalidades mejoradas.
+
+
+
+
+
 
 ## ❓ *__Planteamiento del problema__* ❓
 
-El problema planteado en La Papelería Nueva Escuela T&C se relaciona con el inventario y el registro de personal. El jefe desea implementar un sistema que permita tener un seguimiento en tiempo real de las ventas y compras de productos para solucionar el problema de mal manejo de datos en el inventario. Además, busca una solución para mejorar el registro de entrada y salida de los empleados, ya que el método actual en Excel no es confiable.
+En el entorno actual de la Papeleria T&C, la dependencia de procesos manuales y la ausencia de una plataforma en línea para transacciones virtuales generan ineficiencias operativas y limitan la competitividad. La falta de automatización en las operaciones afecta la precisión en la gestión de inventarios, mientras que la carencia de presencia en línea reduce la capacidad de adaptación al mercado digital. El planteamiento del problema se centra en la necesidad de desarrollar un programa informático integral que aborde estas deficiencias, automatice procesos y mejore la eficiencia operativa en ambos entornos, físico y virtual.
+
 
 ## 🔌 *__Modulos__* 🔌
 
