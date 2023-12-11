@@ -14,28 +14,28 @@ El objetivo principal de este proyecto consiste en desarrollar un programa web i
 
 ## 🔑 *__Objetivos Especificos__* 🔑
 
-- **Incrementar la Participación en Compras en Línea:
+- **Incrementar la Participación en Compras en Línea:**
   Aumentar la cantidad de clientes que realizan compras a través de la plataforma en línea en los primeros seis meses.
 
 
-- **Aumentar la Frecuencia de Compras:
+- **Aumentar la Frecuencia de Compras:**
   Incentivar un aumento en la frecuencia de compras por cliente mediante programas de recompensas y promociones exclusivas.
 
 
 
-- **Aumentar la Retención de Clientes:
+- **Aumentar la Retención de Clientes:**
    Lograr una tasa de retención de clientes mediante la implementación de un programa de fidelización y notificaciones personalizadas.
 
 
-- **Reducir el Tiempo de Procesamiento de Órdenes:
+- **Reducir el Tiempo de Procesamiento de Órdenes:**
     Disminuir el tiempo promedio de procesamiento de órdenes mediante la automatización de los flujos de trabajo.
   
 
-- **Facilitar la Promoción y Ofertas Especiales:
+- **Facilitar la Promoción y Ofertas Especiales:**
     Incrementar la participación en promociones en línea durante el primer trimestre de implementación.
   
 
-- **Mejorar la Experiencia del Cliente:
+- **Mejorar la Experiencia del Cliente:**
    Aumentar la tasa de satisfacción del cliente a través de una interfaz de usuario intuitiva y funcionalidades mejoradas.
 
 
@@ -50,18 +50,18 @@ En el entorno actual de la Papeleria T&C, la dependencia de procesos manuales y 
 
 ## 🔌 *__Modulos__* 🔌
 
-- *__Caja:__* Este modulo permite a los usuarios gestionar transacciones financieras, registrar ventas, controlar el flujo de efectivo y mantener un registro de las operaciones monetarias. Esto es fundamental para un funcionamiento preciso y seguro en las transacciones comerciales.
+- *__Productos:__* Este modulo de productos es donde gestionamos cada articulo que ofrecemos, Aqui añadimos, actualizamos o eliminamos productos para mantener nuestra oferta actualizada y atractiva para nuestros clientes.
 
-- *__Inventario:__* Este modulo brinda la capacidad de llevar un registro detallado de productos disponibles. Los usuarios pueden supervisar las existencias, gestionar aprovisionamientos y optimizar la gestión de inventario de manera eficiente.
+- *__Categorias:__* Permite a los empleados organizar, crear y editar las diferentes categorias de productos para que los clientes puedan encontrar facilmente lo que buscan.
 
-- *__Personal:__* Este modulo proporciona herramientas para administrar a los empleados de la organización. Permite la asignación de roles, seguimiento del desempeño y la gestión de recursos humanos, contribuyendo a un entorno laboral efectivo y productivo.
+- *__Promociones:__* El modulo de codigos promocionales es donde editamos o eliminamos ofertas especiales. Esto nos permite mejorar la experiencia de compra ofreciendo descuentos atractivos a nuestros clientes. 
 
-- *__Proveedores__* Este modulo está diseñado para facilitar la gestión de información relacionada con los proveedores de la organización. Los usuarios pueden registrar, actualizar y rastrear datos de los proveedores, lo que contribuye a una gestión eficiente de las relaciones con los mismos.
+
 
 ## 👥*__Integrantes__* 👥
 
 - [Diego Alejandro Muñoz Pineda](https://github.com/diegoamunozp).
-- [Joseph Daniel Sifontes Forero](https://pages.github.com/).
+- [Joseph Daniel Sifontes Forero](https://github.com/Joseph-1900).
 - [Andres Felipe Valero Daza](https://github.com/AndresFVD).
 - [Deivi Jesus Mortigo Abril](https://github.com/deivimortigo).
 
