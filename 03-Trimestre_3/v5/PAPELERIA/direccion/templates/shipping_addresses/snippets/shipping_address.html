@@ -1,0 +1,78 @@
+<div class="card">
+    <h5 class="card-header"></h5>
+    <div class="card-body cardbodycustomaddress">
+        <h4 class="card-title">{{ shipping_address.address}}</h4>
+        <p></p>
+        <h5>{{ shipping_address.address_countrydetail }}</h5>
+        <h5>{{ shipping_address.address_mundetail }}</h5>
+        <div class="card-title mt-3">
+        <h6>Codigo Postal: {{ shipping_address.postal_code }}</h6>
+        </div>
+        <div class="card-title">
+            {{ shipping_address.reference }}
+        </div>
+
+        {% if edit %}
+        <div class="mt-4">
+            
+            {% if shipping_address.default %}
+            <div class="text-custom3 mt-3 text-center">
+                ( Direccion Principal )
+            </div>
+            {% else %}
+            <a href="{% url 'shipping_addresses:default' shipping_address.pk %}" class="btn btn-warning">Default</a>
+            <a href="{% url 'shipping_addresses:delete' shipping_address.pk %}" class="btn btn-danger">Eliminar</a>
+            {% endif %}
+            <div class="text-center mt-3">       
+                <a href="{% url 'shipping_addresses:update' shipping_address.pk %}" class="btn btn-custom">Editar</a>
+            </div>
+            
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+
+<style>
+    .cardbodycustomaddress{
+        color: black;
+    }
+    
+    .btn-custom {
+        background-color: #1db954;
+        border: 1px solid black;
+    }
+
+    .btn-custom:hover {
+        transition: background-color 0.5s ease-in-out;
+        background-color: #d6d6d6;
+        border: 1px solid black;
+    }
+
+    .btn-warning {
+        border: 1px solid black;
+    }
+
+    .btn-warning:hover {
+        transition: background-color 0.5s ease-in-out;
+        background-color: #d6d6d6;
+        border: 1px solid black;
+    }
+
+    .btn-danger {
+
+        border: 1px solid black;
+    }
+
+    .btn-custom:hover {
+        transition: background-color 0.5s ease-in-out;
+        background-color: #d6d6d6;
+        border: 1px solid black;
+    }
+
+    .text-custom3{
+        font-family: Raleway;
+        font-weight: bold;
+        font-size: 20px;
+    }
+</style>

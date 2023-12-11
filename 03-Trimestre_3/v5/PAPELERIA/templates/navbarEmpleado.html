@@ -1,0 +1,360 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+
+        <a class="navbar-brand text-center-vertical" href="{% url 'menu_empleados' %}">
+            <img src="{% static 'images/LogoSinFondo_PapeleriaT_C.png' %}" alt="Logo" width="40" height="40"
+                class="rounded-circle">
+            <span class="text-custom textoinicio">PAPELERIA T&C</span>
+        </a>
+
+        <button class="navbar-toggler d-lg-inline" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#navbarMenu" aria-controls="navbarMenu">
+            <i class="fas fa-bars" id="menu-icon"></i>
+        </button>
+    </div>
+</nav>
+
+
+<div class="offcanvas offcanvas-end menu-custom" tabindex="-1" id="navbarMenu" aria-labelledby="navbarMenuLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="navbarMenuLabel">OPCIONES</h5>
+
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="navbar-nav">
+
+            <nav class="SaludoHora">
+                <p class="FuenteSaludo" id="saludo"></p>
+                <p></p>
+            </nav>
+            <p></p>
+            <div class="col-md-12 custom-border p-3 ">
+                <a class="nav-link me-4 link2 text-start fs-5" href="" id="mostrarModal">
+                    MODULOS <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <ul>
+                    <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                        <a class="nav-link me-5" href="{% url 'productos_E' %}">
+                            <i class="fas fa-box-open "></i>
+                            Productos
+                        </a>
+                    </li>
+
+                    <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                        <a class="nav-link me-5" href="{% url 'categorias_E' %}">
+                            <i class="fas fa-list-alt"></i>
+                            Categorias
+                        </a>
+                    </li>
+
+                    <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                        <a class="nav-link me-5" href="{% url 'promocional_E' %}">
+                            <i class="fas fa-tag"></i>
+                            Codigo promocional
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+            <p></p>
+            <div class="col-md-12 custom-border p-3 ">
+                <a class="nav-link me-4 link2 text-start fs-5" href="" id="mostrarModal">
+                    SOCIAL <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <ul>
+                    <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                        <a class="nav-link me-5" href="{% url 'menu_empleados' %}">
+                            <i class="fas fa-home "></i>
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                        <a class="nav-link me-5" href="">
+                            <i class="fas fa-question-circle"></i>
+                            Ayuda
+                        </a>
+                    </li>
+
+                    <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                        <a class="nav-link me-6" href="{% url 'index' %}">
+                            <i class="fas fa-shopping-bag"></i>
+                            Ir a la web abierta
+                        </a>
+                    </li>
+
+                    <li class="nav-item" style="color: rgb(196, 196, 196);border: none; outline: none;">
+                        <a class="nav-link me-6" href="{% url 'logout' %}">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Cerrar Sesion
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </ul>
+    </div>
+</div>
+
+<style>
+    body {
+
+padding: 0;
+margin: 0;
+background-color: #090909;
+
+}
+
+/* NAVBAR */
+
+.text-center-vertical {
+display: flex;
+align-items: center;
+}
+
+.text-custom {
+color: #ffffff;
+font-size: 1.5em;
+margin-left: 10px;
+font-family: 'Poppins', sans-serif;
+}
+
+.navbar-custom {
+background-color: #121212;
+margin-right: 0;
+margin-left: 0;
+border-bottom: 2px solid #3f3f3f;
+}
+
+.menu-custom {
+background-color: #1ed760;
+color: #ffffff;
+}
+
+.navbar-brand img {
+margin-left: 3em;
+}
+
+.navbar-toggler {
+margin-right: 3em;
+background-color: #1ed760;
+border: none;
+outline: none;
+width: 2em;
+height: 2em;
+font-size: 24px;
+
+}
+
+.navbar-toggler:hover {
+background-color: #1db954;
+}
+
+#menu-icon {
+color: rgb(0, 0, 0);
+}
+
+.offcanvas-header {
+background-color: #3f3f3f;
+border-bottom: 2px solid #535353;
+}
+
+.offcanvas-body {
+background-color: #212121;
+color: #ffffff;
+}
+
+.offcanvas-header {
+background-color: #212121;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.offcanvas-title {
+text-align: center;
+width: 100%;
+margin: 0;
+}
+
+.offcanvas-header .btn-close {
+border: none;
+width: 30px;
+height: 30px;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #1ed760;
+}
+
+.SaludoHora {
+display: flex;
+justify-content: center;
+align-items: center;
+color: white;
+text-align: center;
+border-bottom: 1px solid white;
+}
+
+.FuenteSaludo {
+font-family: 'Poppins', sans-serif;
+color: white;
+font-size: 35px;
+
+}
+
+.FuenteSaludo:active {
+color: #1db954;
+font-family: Poppins-BoldItalic;
+
+}
+
+.FuenteSaludo:hover {
+cursor: pointer;
+}
+
+
+.nav-link:hover {
+color: #1db954;
+}
+
+.nav-link.link2 {
+color: #1db954;
+}
+
+.nav-link.link2:hover {
+color: #888888;
+}
+
+
+/* CONTENIDO /*
+
+/*MENSAJE*/
+
+/* CSS para la animacion deplazamiento*/
+
+.ContenedorDezplazamiento {
+white-space: nowrap;
+overflow: hidden;
+position: relative;
+width: 100%;
+color: #1db954;
+background-color: #212121;
+padding: 0.4em;
+border-bottom: 2px solid #242424
+}
+
+.TextoDezplazamientoEspecial {
+display: inline-block;
+margin-right: 10px;
+font-weight: bold;
+}
+
+.TextoDezplazamientoEspecial2 {
+display: inline-block;
+margin-right: 10px;
+font-weight: bold;
+color: white;
+}
+
+.TextoDezplazamiento {
+display: inline-block;
+animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+0% {
+    transform: translateX(100%);
+}
+
+100% {
+    transform: translateX(-100%);
+}
+}
+
+.textoinicio {
+cursor: pointer;
+transition: color 0.4s ease-in-out;
+}
+
+.textoinicio:hover {
+transition: color 0.3s, color 0.3s ease-in-out;
+color: #1db954
+}
+
+ul {
+list-style-type: none;
+padding-left: 0;
+}
+
+/* BARRA DE DESPLAZAMIENTO (NO TOCAR) */
+
+::-webkit-scrollbar {
+width: 10px;
+}
+
+::-webkit-scrollbar-track {
+background-color: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+background-color: rgba(255, 255, 255, 0.6);
+border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background-color: rgba(255, 255, 255, 0.8);
+}
+
+html {
+scrollbar-width: thin;
+scrollbar-color: rgba(255, 255, 255, 0.6) rgba(0, 0, 0, 0.2);
+}
+
+
+html {
+scrollbar-width: thin;
+scrollbar-color: rgba(255, 255, 255, 0.6) rgba(0, 0, 0, 0.2);
+}
+
+html::-moz-scrollbar-thumb {
+border-radius: 5px;
+}
+
+html::-moz-scrollbar-thumb:hover {
+background-color: rgba(255, 255, 255, 0.8);
+}
+
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const saludoElement = document.getElementById("saludo");
+    const horaActual = new Date().getHours();
+
+    if (horaActual >= 6 && horaActual < 12) {
+        saludoElement.textContent = "BUENOS DIAS";
+    } else if (horaActual >= 12 && horaActual < 18) {
+        saludoElement.textContent = "BUENAS TARDES";
+    } else {
+        saludoElement.textContent = "BUENAS NOCHES";
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const saludoElement = document.getElementById("saludoPrin");
+    const horaActual = new Date().getHours();
+
+    if (horaActual >= 6 && horaActual < 12) {
+        saludoElement.textContent = "BUENOS DIAS";
+    } else if (horaActual >= 12 && horaActual < 18) {
+        saludoElement.textContent = "BUENAS TARDES";
+    } else {
+        saludoElement.textContent = "BUENAS NOCHES";
+    }
+});
+</script>

@@ -1,0 +1,317 @@
+{% url 'login' as login %}
+{% url 'register' as register %}
+{% url 'carts:cart' as cart %}
+{% url 'shipping_addresses:shipping_addresses' as shipping_addresses %}
+{% url 'orders:completeds' as completeds %}
+{% url 'perfil_factura:create' as perfil_factura %}
+{% url 'menu_principalEmpleados' as menuempleados %}
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-custom align-items-start custom-navbar mt-2 mb-2">
+    <div class="container-fluid d-flex justify-content-between">
+        
+        <a class="navbar-brand text-center-vertical" href="{% url 'index' %}">
+            <img src="{% static 'images/LogoSinFondo_PapeleriaT_C.png' %}" alt="Logo" width="30" height="30"
+                class="rounded-circle">
+            <span class="text-custom textoinicio">PAPELERIA T&C</span>
+
+        </a>
+        <nav class="container-fluid d-flex justify-content-between px-5">
+
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse" style="font-size: 1.2vw;">
+                <ul class="navbar-nav ms-auto">
+                    {% if user.is_authenticated %}
+
+                    <div class="nav-item username-container" id="changeBackgroundBtn">
+                        <div href="" class="nav-link" style="color: white;">
+                            <i class="fas fa-user"></i>
+                            {{ user.username }}
+                        </div>
+                    </div>
+
+                    <li class="nav-item hoverable">
+                        <a href="{% url 'logout' %}" class="nav-link"
+                            onmouseenter="animateText(this.querySelector('.name-label-logout'))">
+                            <span class="name-label-logout">Salir</span>
+                            <i class="fas fa-sign-in-alt me-1"></i>
+                        </a>
+                    </li>
+
+                    {% else %}
+                    <li class="nav-item">
+                        <a href="{{ register }}" class="nav-link {% if request.path == register %}active{% endif %}">
+                            Crea tu cuenta
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ login }}" class="nav-link {% if request.path == login %}active{% endif %}">
+                            Ingresa
+                        </a>
+                    </li>
+
+
+
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                    <li class="nav-item hoverable">
+                        <a class="nav-link {% if request.path == shipping_addresses %}active{% endif %}"
+                            href="{{ shipping_addresses }}"
+                            onmouseenter="animateText(this.querySelector('.name-label-shipping'))">
+                            <span class="name-label-shipping"> Mis Direcciones de Envío</span>
+                            <span class="fas fa-location-arrow"></span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item hoverable">
+                        <a class="nav-link {% if request.path == completeds %}active{% endif %}" href="{{ completeds }}"
+                            onmouseenter="animateText(this.querySelector('.name-label-completeds'))">
+                            <span class="name-label-completeds"> Mis compras</span>
+                            <span class="fas fa-shipping-fast"></span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item hoverable">
+                        <a class="nav-link {% if request.path == billing_profiles %}active{% endif %}"
+                            href="{{ billing_profiles }}"
+                            onmouseenter="animateText(this.querySelector('.name-label-billing'))">
+                            <span class="name-label-billing"> Mis métodos de pago</span>
+                            <span class="fab fa-cc-stripe"></span>
+                        </a>
+                    </li>
+
+
+                    {% endif %}
+
+                    
+                    {% if user.groups.all.0.name == 'Empleado' %}
+                    <li class="carritocustom nav-item hoverable">
+                        <a class="nav-link {% if request.path == menu_empleados %}active{% endif %}"
+                        href="{% url 'menu_empleados' %}"
+                        onmouseenter="animateText(this.querySelector('.name-label-closed'))">
+                        <span class="name-label-closed">Web Cerrada</span>
+                        <span class="fas fa-lock"></span>
+                    </a>
+                    </li>
+                    {% endif %}
+                    {% if user.groups.all.0.name == 'Admin' %}
+                    <li class="carritocustom nav-item hoverable">
+                        <a class="nav-link {% if request.path == menu_empleados %}active{% endif %}"
+                            href="{% url 'admin:index' %}"
+                            onmouseenter="animateText(this.querySelector('.name-label-admin'))">
+                            <span class="name-label-admin">Panel de administrador</span>
+                            <span class="fas fa-cogs"></span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item hoverable">
+                        <a class="nav-link" href="{{ cart }}"
+                            onmouseenter="animateText(this.querySelector('.name-label'))">
+
+                            <span class="name-label"> Mi carrito</span>
+                            <span class="fas fa-shopping-cart cart-icon"></span>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+
+        </nav>
+    </div>
+</nav>
+
+
+
+<style>
+    /* NAVBAR */
+
+    .text-center-vertical {
+        display: flex;
+        align-items: center;
+    }
+
+    .text-custom {
+        color: #ffffff;
+        font-size: 1.2em;
+        margin-left: 10px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar-custom {
+        background-color: #121212;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .menu-custom {
+        background-color: #1ed760;
+        color: #ffffff;
+    }
+
+    .navbar-brand img {
+        margin-left: 3em;
+    }
+
+    /* Estilos para la barra de búsqueda */
+    .navbar-custom .container-fluid form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .navbar-custom .container-fluid button {
+        border-radius: 20px;
+        font-size: 16px;
+        background-color: #1ed760;
+    }
+
+    .navbar-custom .container-fluid button:hover {
+        background-color: #1db954;
+    }
+
+    @media (max-width: 767px) {
+        .form-control {
+            margin-top: 1em;
+            width: 30px;
+        }
+
+        .btn {
+            margin-top: 0.5em;
+            width: 50px;
+        }
+    }
+
+    .navbar-custom .container-fluid {
+        justify-content: center;
+    }
+
+
+
+    @media (max-width: 767px) {
+        .navbar-custom .container-fluid ul {
+            justify-content: flex-start;
+        }
+    }
+
+
+    /* Segundo navbar (tambien hay css del segundo navbar arriba)*/
+
+    .dropdown {
+        color: #1db954;
+    }
+
+    .custom-navbar .container-fluid .nav-link {
+        color: #ffffff;
+        font-family: Inter;
+        font-weight: 500;
+    }
+
+    .custom-navbar {
+        background-color: transparent;
+        margin-right: 0;
+        margin-left: 0;
+        font-size: 0.8em;
+    }
+
+
+    .custom-navbar .container-fluid .nav-link:hover {
+        transition: color 0.2s ease-in-out;
+        color: #1db954;
+    }
+
+    .custom-navbar2 .container-fluid .nav-link {
+        color: #1db954;
+        margin-left: 1em;
+        font-size: 0.8em;
+    }
+
+    .nav-link {
+        margin-left: 1em;
+    }
+
+    .cart-icon {
+        color: #ffffff;
+        transition: color 0.2s ease-in-out;
+        
+    }
+
+    .cart-icon:hover {
+        color: #1db954;
+    }
+
+    .username-container {
+        cursor: default;
+        text-decoration: none;
+        color: white;
+    }
+
+    .username-container:hover {
+        cursor: default;
+        text-decoration: none;
+        color: white;
+    }
+
+    .cart-icon {
+        color: #ffffff;
+        transition: color 0.2s ease-in-out, transform 0.5s ease-in-out;
+    }
+
+    .name-label-shipping,
+    .name-label-completeds,
+    .name-label-billing,
+    .name-label-admin,
+    .name-label-logout,
+    .name-label-closed {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out;
+    }
+
+    .nav-link:hover .name-label-shipping,
+    .nav-link:hover .name-label-completeds,
+    .nav-link:hover .name-label-billing,
+    .nav-link:hover .name-label-admin,
+    .nav-link:hover .name-label-logout,
+    .nav-link:hover .name-label-closed {
+        display: inline-block;
+        opacity: 1;
+        transform: translateX(-10px);
+        opacity: 1;
+        animation: animate__slideInLeft;
+        animation-duration: 0.2s;
+    }
+</style>
+<script>
+    const hoverableItems = document.querySelectorAll('.hoverable');
+
+    hoverableItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            const name = item.getAttribute('data-name');
+            const nameLabel = item.querySelector('.name-label');
+            nameLabel.style.display = 'inline-block';
+        });
+
+        item.addEventListener('mouseleave', () => {
+            const nameLabel = item.querySelector('.name-label');
+            nameLabel.style.display = 'none';
+        });
+    });
+    function animateText(element) {
+        const text = element.textContent;
+        element.textContent = '';
+
+        for (let i = 0; i < text.length; i++) {
+            const newText = document.createTextNode(text.charAt(i));
+            const newSpan = document.createElement('span');
+            newSpan.appendChild(newText);
+            element.appendChild(newSpan);
+            newSpan.style.transitionDelay = `${i * 50}ms`;
+        }
+    }
+</script>

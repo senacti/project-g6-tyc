@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col mt-5">
+
+    <div class="container-sm p-5 rounded text-dark logincustom">
+        <h2 class="text-center" style="font-family: Poppins; font-weight: bold;">Registro</h2>
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.errors %}
+                        {{ field.errors }}
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <div class="text-center mt-3">
+                <button type="submit" class="btn btn-custom">Registrar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    .logincustom {
+        background-color: rgb(255, 255, 255, 0.4);
+        border: 3px solid black;
+    }
+
+    .btn-custom {
+        background-color: #1db954;
+        border: 1px solid black;
+        font-weight: bold;
+    }
+
+    .btn-custom:hover {
+        transition: background-color 0.5s ease-in-out;
+        background-color: #d6d6d6;
+        border: 1px solid black;
+    }
+</style>
+{% endblock %}

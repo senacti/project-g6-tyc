@@ -1,0 +1,66 @@
+{% extends 'baseEmpleados.html' %}
+
+{% block contenido %}
+<div class="container logincustom mt-5 pb-3 mb-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mt-4 customdivform">
+            <h2 class="text-center mb-4 letracustomact">Crear Categoría</h2>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="text-center">
+                    <button type="submit" class="btn btn-custom mt-3">Crear</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Estilos para los campos del formulario */
+    .form-control {
+        border-radius: 5px;
+        border: 1px solid #ced4da;
+        padding: 8px;
+        width: 100%;
+    }
+    
+    textarea.form-control {
+        resize: vertical;
+        height: 100px;
+    }
+
+    /* Tus estilos personalizados */
+    .customdivform {
+        color: #1db954;
+        font-family: Raleway;
+        font-weight: 1000;
+    }
+    
+    .letracustomact {
+        font-family: poppins;
+        font-weight: bold;
+        color: white;
+    }
+    
+    .logincustom {
+        background-color: #5d5d5d2f;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 50px;
+    }
+    
+    .btn-custom {
+        background-color: #1db954;
+        border: 1px solid black;
+        font-weight: bold;
+        font-family: Raleway;
+        font-size: 20px;
+    }
+    
+    .btn-custom:hover {
+        transition: background-color 0.5s ease-in-out;
+        background-color: #d6d6d6;
+        border: 1px solid black;
+    }
+</style>
+{% endblock %}
