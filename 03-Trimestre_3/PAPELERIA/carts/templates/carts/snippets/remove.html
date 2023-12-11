@@ -1,6 +1,26 @@
 <form action="{% url 'carts:remove' %}" method="post">
     {% csrf_token %}
-
     <input type="hidden" name="producto_id" value="{{ producto.id }}">
-    <button type="submit" class="btn btn-link text-danger" style="padding: 0px; text-decoration: none; font-weight: bold;">Eliminar</button>
+    <button type="submit" class="btn btn-link text-black custom-btn-remove btn-sm">Eliminar</button>
 </form>
+
+<style>
+.custom-btn-remove {
+    width: 100%;
+    padding: 5px 10px;
+    background-color: #dc3545;
+    border: 1px solid #dc3545;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.custom-btn-remove:hover {
+    background-color: #c82333;
+    border-color: #c82333;
+    color: white;
+}
+
+</style>

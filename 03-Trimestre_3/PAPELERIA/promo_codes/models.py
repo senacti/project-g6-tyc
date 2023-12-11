@@ -22,6 +22,10 @@ class PromoCode(models.Model):
 
     objects = PromoCodeManager()
 
+    class Meta:
+        verbose_name = 'Codigo Promocion'
+        verbose_name_plural = 'Codigos Promocion'
+
     def __str__(self):
         return self.code
     

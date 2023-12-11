@@ -1,0 +1,297 @@
+{% extends 'baseEmpleados.html' %}
+
+{% load static %}
+
+{% block title %}
+
+Modulos Index
+
+{% endblock %}
+
+
+{% block js %}
+
+<script src="{% static 'js/Web_Cerrada/Empleado/Social/ModulosIndex.js' %}"></script>
+
+{% endblock %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/Web_Cerrada/Empleado/Social/ModulosIndex.css' %}">
+
+{% endblock %}
+
+{% block contenido %}
+    
+    <div class="container mt-4 mb-3">
+
+        <div class="container mt-4 mb-3">
+            <div class="col-md-12 custom-border link1">
+                <p class="text-center fs-2 TituloBienvenida" style="color: white; "> MODULOS</p>
+                <div class="row mb-3">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <div class="row mt-4 mb-5">
+                            <div class="col-md-4 mb-4">
+                                <div class="card" style="background-color:#121212; color: white;">
+                                    <img src="{% static 'images/IconoProductos.png' %}" class="card-img-top" alt="Card Image 1">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center" style="font-size: 1.5em;">PRODUCTOS</h5>
+                                        <p class="card-text">Controla y administra tus productos y existencias para una gestión eficiente de inventario y seguimiento de transacciones para la papeleria. </p>
+                                        <div class="text-center">
+                                            <a href="{% url 'productos_E' %}" class="btn">¡Vamos al modulo!</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4" >
+                                <div class="card" style="background-color:#121212; color: white;">
+                                    <img src="{% static 'images/IconoCategorias.png' %}" class="card-img-top" alt="Card Image 2">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">CATEGORIAS</h5>
+                                        <p class="card-text">Registra transacciones financieras y gestiona los fondos disponibles en tu organización, asegurando un control preciso del flujo de efectivo.</p>
+                                        <div class="text-center">
+                                            <a href="{% url 'categorias_E' %}" class="btn">¡Vamos al modulo!</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-5">
+                                <div class="card" style="background-color:#121212; color: white;">
+                                    <img src="{% static 'images/IconoPromociones.png' %}" class="card-img-top" alt="Card Image 3">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">PROMOCIONES</h5>
+                                        <p class="card-text"> <br>Administra los datos y tareas relacionadas con los empleados de tu equipo, incluyendo contrataciones, capacitaciones y evaluaciones.</p>
+                                        <div class="text-center">
+                                            <a href="{% url 'promocional_E' %}" class="btn">¡Vamos al modulo!</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+
+    </div>
+
+    <style>
+        .custom-border {
+    border-radius: 5px;
+    background-color: #1d1d1d; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+
+/*contenido ModulosIndex*/
+
+
+.TituloBienvenida {
+    font-family: 'Poppins', sans-serif;
+    background-color:#121212;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 5px;
+    border-bottom: 1px solid #3d3d3d; 
+}
+
+@media only screen and (min-device-width: 768px) {
+    .contenidoInv{
+        border-left: 1px solid #3d3d3d;
+        margin-top: -1em;
+        
+    }
+}
+
+@media screen and (max-device-width: 767px) {
+    .contenidoInv{
+        margin-bottom: 1em;
+    }
+}
+
+.TituloContenido{
+    margin-top: 0.3em;
+    margin-bottom: 0.5em;
+    color: rgb(255, 255, 255);
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.ContenidoContenido{
+    font-family: 'Poppins', sans-serif;
+    color: #888888;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-bottom: 1.5em;
+}
+
+.TituloContenido2{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    color: rgb(255, 255, 255);
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+.imagenes-Modulos img {
+
+    transition: transform 0.3s, opacity 0.3s; 
+    opacity: 0.4; 
+}
+
+.imagenes-Modulos img.ZoomClick:hover {
+    transform: scale(1.2); 
+    opacity: 1; 
+}
+
+.imagenes-Modulos img:not(:hover) {
+    transform: scale(0.8); 
+    opacity: 0.7; 
+}
+
+
+.imagenes-Modulos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.ImagenCuadroIconos {
+    position: relative;
+}
+
+.ImagenCuadroIconos:hover .NombreDebajoIconos1 {
+    opacity: 1;
+}
+.ImagenCuadroIconos:hover .NombreDebajoIconos2 {
+    opacity: 1;
+}
+.imagenes-Modulos img {
+    width: 120px;
+    margin: 10px;
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0.7;
+}
+
+.imagenes-Modulos img.ZoomClick:hover {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.imagenes-Modulos a:not(:hover) img {
+    transform: scale(0.8);
+    opacity: 0.7;
+    
+}
+
+.Mitad3 {
+
+    text-align: center;
+    font-size: 2em;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.Mitad3-3 {
+    padding: 50px;
+    padding-top: 1%;
+}
+
+.ContextoLetraTitulo{
+
+    color: rgb(255, 255, 255);
+    font-family: 'Raleway';
+    font-size: 2em;
+}
+
+.ContextoProveedores {
+
+    left: 10%;
+    color: rgb(193, 193, 193);
+    font-family: 'Poppins';
+}
+
+.LetraContexto{
+    font-size: 1.5em;
+}
+
+/*Mitad 2*/
+
+.Mitad2 {
+    padding: 50px;
+    padding-bottom: 0%;
+    text-align: center;
+    
+}
+
+.NoticiasLetra{
+    font-family: 'Poppins';
+    color: white;
+    font-size: 44px;
+    padding: auto;
+    display: contents;
+    
+
+
+}
+
+.Mitad2-2 {
+
+    padding: 50px;
+    padding-top: 1%;
+    text-align: center;
+    
+}
+
+.LetraDescripcionProveedores {
+
+    font-family: 'Poppins', sans-serif;
+    color: rgb(193, 193, 193);
+    font-size: 1.5em;
+
+}
+
+.card-title{
+
+    font-size: 1.5em;
+    color: #1db954;
+}
+
+.card-text{
+    color: #ffffff;
+    font-family: Poppins;
+    font-weight: bold;
+}
+
+.btn{
+    background-color: #1db954;
+}
+
+@media screen and (max-device-width: 347px) {
+    .NoticiasLetra{
+        font-family: 'Poppins';
+        color: white;
+        font-size: 180%;
+        padding: auto;
+        display: contents;
+    
+    }
+
+    .text-custom{
+        font-size: 1em;
+    }
+}
+
+a{
+    color: #1db954;
+}
+    </style>
+    
+{% endblock %}

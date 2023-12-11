@@ -27,6 +27,10 @@ class Order(models.Model):
     promo_code = models.OneToOneField(PromoCode, null=True, blank=True,
                                       on_delete=models.CASCADE)
 
+    class Meta:
+        verbose_name = 'Orden'
+        verbose_name_plural = 'Ordenes'
+
     def __str__ (self):
         return self.order_id
     

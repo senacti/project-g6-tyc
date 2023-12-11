@@ -7,5 +7,9 @@ class Categoria(models.Model):
     productos = models.ManyToManyField(Producto, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        verbose_name = 'Categoria'
+        verbose_name_plural = 'Categorias'
+
     def __str__(self):
         return self.titulo

@@ -5,12 +5,12 @@
 {% block content %}
 <div class="justify-content-center p-5 divdetailviewcompra">
     <div class="row">
-        <div class="col-3">
+        <div class="col-lg-3 col-md-6 mb-3 mb-md-0 d-flex justify-content-center align-items-center">
             {% if producto.image %}
-            <img src="{{ producto.image.url }}" alt="Imagen del producto" width="200" height="200" class="bg-custom">
+                <img src="{{ producto.image.url }}" alt="Imagen del producto" width="200" height="200" class="bg-custom">
             {% endif %}
         </div>
-        <div class="col">
+        <div class="col-lg-9 col-md-6">
             <div class="h3 font-weight-bold textcustomcarritoadd">
                 {{ quantity | quantity_add_format }} al carrito
             </div>
@@ -25,27 +25,25 @@
             </div>
             <p></p>
             <div class="row mt-5">
-                <div class="col-2 ">
-                    <a href="{% url 'carts:cart' %}" class="btn btn-custom">Ver carrito</a>
+                <div class="col-md-6 mb-3 mb-md-0 text-center text-md-start">
+                    <a href="{% url 'carts:cart' %}" class="btn btn-custom btn-lg">Ver carrito</a>
                 </div>
-                <div class="col-3">
-                    <a href="{% url 'index' %}" class="btn btn-custom">Seguir comprando</a>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="{% url 'index' %}" class="btn btn-custom btn-lg">Seguir comprando</a>
                 </div>
             </div>
-        
         </div>
     </div>
-    
 </div>
 
 <style>
     .btn-custom {
         background-color: #1db954;
         border: 1px solid black;
+        transition: background-color 0.5s ease-in-out;
     }
 
     .btn-custom:hover {
-        transition: background-color 0.5s ease-in-out;
         background-color: #d6d6d6;
         border: 1px solid black;
     }
@@ -58,12 +56,10 @@
         font-size: 20px;
         transition: color 0.5s ease-in-out;
     }
+    
     .texttitulocustom:hover {
         color: #1db954;
         text-decoration: none;
-        font-family: Poppins;
-        font-weight: bold;
-        font-size: 20px;
     }
 
     .divdetailviewcompra {
@@ -76,11 +72,19 @@
         background-color: white;
         border: 2px solid black;
     }
-    .textcustomcarritoadd{
+    
+    .textcustomcarritoadd {
         font-size: 30px;
         color: #1db954;
         font-family: Poppins;
         font-weight: bold;
+    }
+
+    /* Estilos responsivos */
+    @media (max-width: 992px) {
+        .btn-custom {
+            width: 100%; /* Ancho completo en pantallas pequeñas */
+        }
     }
 </style>
 {% endblock %}

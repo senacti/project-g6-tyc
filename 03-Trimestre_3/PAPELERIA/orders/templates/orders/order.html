@@ -1,43 +1,47 @@
 {% extends 'base.html' %}
 
 {% block breadcrumb %}
-{% include 'orders/snippets/breadcrumb.html' %}
+    {% include 'orders/snippets/breadcrumb.html' %}
 {% endblock %}
 
 {% block content %}
-
-<div class="col-8">
-    <div class="h3">
-        Revisa tu pedido
-    </div>
-    <div class="card cardcustom">
-        <div class="card-body">
-            {% for producto in cart.productos.all %}
-            {% include 'orders/snippets/producto.html' %}
-            {% endfor %}
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-4 mt-4 mt-md-0">
+                {% url 'orders:address' as next_url %}
+                {% include 'orders/snippets/resume.html' with next_url=next_url %}
+            </div>
+            <div class="col-md-8">
+                <div class="h3 mt-3" style="font-family: Raleway;">
+                    Tu Pedido:
+                </div>
+                <div class="card cardcustom mt-4">
+                    <div class="card-body">
+                        {% for producto in cart.productos.all %}
+                            {% include 'orders/snippets/producto.html' %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </div>
-</div>
-<div class="col">
-    {% url 'orders:address' as next_url %}
-    {% include 'orders/snippets/resume.html' with next_url=next_url %}
-</div>
 
-<style>
-    .cardcustom {
-        border: 2px solid black;
-        color: black;
-    }
+    <style>
+        .cardcustom {
+            border: 2px solid black;
+            color: black;
+        }
 
-    .btn-custom {
-        background-color: #1db954;
-        border: 1px solid black;
-    }
+        .btn-custom {
+            background-color: #1db954;
+            border: 1px solid black;
+        }
 
-    .btn-custom:hover {
-        transition: background-color 0.5s ease-in-out;
-        background-color: #d6d6d6;
-        border: 1px solid black;
-    }
-</style>
+        .btn-custom:hover {
+            transition: background-color 0.5s ease-in-out;
+            background-color: #d6d6d6;
+            border: 1px solid black;
+        }
+    </style>
 {% endblock %}

@@ -9,10 +9,9 @@
         </div>
         <button type="button" class="btn btn-custom2" id="add">+</button>
     </div>
-    <div class="mt-4">
-        <button type="submit" class="btn btn-custom">Agregar al carrito</button>
+    <div class="mt-4 text-center text-md-start"> <!-- Alinea el texto a la izquierda en pantallas pequeñas y lo centra en las demás -->
+        <button type="submit" class="btn btn-custom btn-lg">Agregar al carrito</button> <!-- Añade la clase "btn-lg" para hacer el botón más grande en pantallas pequeñas -->
     </div>
-    
 </form>
 
 <script>
@@ -37,27 +36,89 @@
 </script>
 
 <style>
-    .input-width input[type="number"] {
-    width: 80px; /* Ajusta el ancho según sea necesario */
+    /* Estilos para botones */
+    .btn-custom {
+        background-color: #1db954;
+        border: 1px solid black;
+        transition: background-color 0.5s ease-in-out;
     }
-    .btn-custom{
-            background-color: #1db954;
-            border: 1px solid black;
-        }
     
-        .btn-custom:hover{
-            transition: background-color 0.5s ease-in-out;
-            background-color: #d6d6d6;
-            border: 1px solid black;
-        }
-        .btn-custom2{
-            background-color: #1db954;
+    .btn-custom:hover {
+        background-color: #d6d6d6;
+    }
 
-        }
+    .btn-custom2 {
+        background-color: #1db954;
+        transition: background-color 0.1s ease-in-out;
+    }
     
-        .btn-custom2:hover{
-            transition: background-color 0.1s ease-in-out;
-            background-color: #d6d6d6;
+    .btn-custom2:hover {
+        background-color: #d6d6d6;
+    }
 
+    /* Estilos responsivos */
+    @media (max-width: 576px) {
+        .input-group {
+            flex-direction: column;
+            align-items: center;
         }
+
+        .input-width {
+            margin-bottom: 10px;
+        }
+
+        /* Eliminar el border-radius en botones pequeños */
+        .btn-custom,
+        .btn-custom2 {
+            border-radius: 0; /* Elimina el border-radius en pantallas pequeñas */
+        }
+
+         /* Ajustes para el texto del botón en pantallas pequeñas */
+         .mt-4 {
+            width: 100%; /* Ancho completo */
+        }
+
+        .btn-custom.btn-lg {
+            width: 100%; /* Ancho completo para el botón grande en pantallas pequeñas */
+        }
+    }
+    .input-width input[type="number"] {
+        width: 80px; /* Ajusta el ancho según sea necesario */
+    }
+
+    .input-width input[type="number"] {
+        width: 80px; /* Ajusta el ancho según sea necesario */
+    }
+
+    /* Estilos para botones */
+    .btn-custom {
+        background-color: #1db954;
+        border: 1px solid black;
+        transition: background-color 0.5s ease-in-out;
+    }
+    
+    .btn-custom:hover {
+        background-color: #d6d6d6;
+    }
+
+    .btn-custom2 {
+        background-color: #1db954;
+        transition: background-color 0.1s ease-in-out;
+    }
+    
+    .btn-custom2:hover {
+        background-color: #d6d6d6;
+    }
+
+    /* Estilos responsivos */
+    @media (max-width: 576px) {
+        .input-group {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .input-width {
+            margin-bottom: 10px;
+        }
+    }
 </style>

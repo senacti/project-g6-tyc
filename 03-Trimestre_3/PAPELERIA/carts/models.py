@@ -22,6 +22,10 @@ class Cart(models.Model):
 
     FEE = 0.05 
 
+    class Meta:
+        verbose_name = 'Carro De Compra'
+        verbose_name_plural = 'Carro De Compras'
+
     def __str__(self):
         return self.cart_id
     

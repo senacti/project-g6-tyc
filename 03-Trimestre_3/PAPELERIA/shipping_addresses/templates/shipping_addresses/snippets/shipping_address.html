@@ -1,43 +1,51 @@
-<div class="card">
+<div class="card card-custom2">
     <h5 class="card-header"></h5>
-    <div class="card-body cardbodycustomaddress">
-        <h4 class="card-title">{{ shipping_address.address}}</h4>
-        <p></p>
-        <h5>{{ shipping_address.address_countrydetail }}</h5>
-        <h5>{{ shipping_address.address_mundetail }}</h5>
-        <div class="card-title mt-3">
-        <h6>Codigo Postal: {{ shipping_address.postal_code }}</h6>
+    <div class="card-body cardbodycustomaddress" style="font-weight: bold;">
+        <h4 class="card-title text-center">{{ shipping_address.address }}</h4>
+        <h5 class="text-center" style="font-weight: bold;">{{ shipping_address.address_countrydetail }}</h5>
+        <h5 class="text-center" style="font-weight: bold;">{{ shipping_address.address_mundetail }}</h5>
+        <div class="card-title mt-3 text-center">
+            <h6 style="font-weight: bold;">Código Postal: {{ shipping_address.postal_code }}</h6>
         </div>
-        <div class="card-title">
+        <div class="card-title text-center">
             {{ shipping_address.reference }}
         </div>
 
         {% if edit %}
-        <div class="mt-4">
-            
+        <div class="mt-4 text-center">
             {% if shipping_address.default %}
-            <div class="text-custom3 mt-3 text-center">
-                ( Direccion Principal )
+            <div class="text-custom3 mt-3">
+                (Dirección Principal)
             </div>
             {% else %}
-            <a href="{% url 'shipping_addresses:default' shipping_address.pk %}" class="btn btn-warning">Default</a>
-            <a href="{% url 'shipping_addresses:delete' shipping_address.pk %}" class="btn btn-danger">Eliminar</a>
+            <a href="{% url 'shipping_addresses:default' shipping_address.pk %}"
+                class="btn btn-warning btncustomlistaddress">Default</a>
+            <a href="{% url 'shipping_addresses:delete' shipping_address.pk %}" class="btn btn-danger btncustomlistaddress">Eliminar</a>
             {% endif %}
-            <div class="text-center mt-3">       
-                <a href="{% url 'shipping_addresses:update' shipping_address.pk %}" class="btn btn-custom">Editar</a>
+            <div class="">
+                <a href="{% url 'shipping_addresses:update' shipping_address.pk %}" class="btn btn-custom btncustomlistaddress">Editar</a>
             </div>
-            
         </div>
         {% endif %}
-
     </div>
 </div>
 
 <style>
-    .cardbodycustomaddress{
+    .card-custom2 {
+        font-family: Inter;
+        background-color: #f8f9fa;
+        /* Fondo diferente */
+        border: 2px solid #000000;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        /* Centrado */
+    }
+
+    .cardbodycustomaddress {
         color: black;
     }
-    
+
     .btn-custom {
         background-color: #1db954;
         border: 1px solid black;
@@ -60,7 +68,6 @@
     }
 
     .btn-danger {
-
         border: 1px solid black;
     }
 
@@ -70,9 +77,24 @@
         border: 1px solid black;
     }
 
-    .text-custom3{
+    .text-custom3 {
         font-family: Raleway;
         font-weight: bold;
         font-size: 20px;
     }
+
+    @media (max-width: 767px) {
+        .btncustomlistaddress {
+            width: 100%;
+        }
+    }
+
+    @media (min-width: 767px) {
+
+        .btn-custom{
+            margin-top: 10PX;
+        }
+    }
+
+
 </style>

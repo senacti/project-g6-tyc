@@ -33,6 +33,8 @@ urlpatterns = [
     path('Cerrada/ProductosEmpleado', empleado_required(productos_views.ProductosListView.as_view()), name='productos_E'),
     path('Cerrada/CategoriasEmpleado', empleado_required(CategoriaListView.as_view()), name='categorias_E'),  
     path('Cerrada/PromocionesEmpleado', empleado_required(promo_views.PromoCodeListView.as_view()), name='promocional_E'),
+    path('Cerrada/Ayuda', empleado_required(views.ayuda), name='ayuda'),
+    path('Cerrada/ModulosIndex', empleado_required(views.modulosindex), name='modulosindex'),
 ]
 
 if settings.DEBUG:

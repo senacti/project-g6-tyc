@@ -1,34 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="col mt-5">
-
+<div class="container mt-5">
     <!-- Contenedor blanco para el formulario -->
-    <div class="container-sm p-5 rounded text-dark logincustom">
-        <h2 class="text-center" style="font-family: Poppins; font-weight: bold;">Login</h2>
-        <p></p>
-
+    <div class="container-sm p-4 p-sm-5 rounded text-dark logincustom">
+        <h2 class="text-center mb-4" style="font-family: Poppins; font-weight: bold;">Login</h2>
         <form method="post">
             {% csrf_token %}
-            <div class="form-group">
+            <div class="form-group mb-3">
                 <label for="username">Username</label>
                 <input type="text" name="username" class="form-control">
             </div>
-            <div class="form-group mb-3">
+            <div class="form-group mb-4">
                 <label for="password">Password</label>
                 <input type="password" name="password" class="form-control">
             </div>
             <div class="text-center">
-                <button type="submit" class="btn btn-custom">Login</button>
+                <button type="submit" class="btn btn-custom btn-lg">Login</button>
             </div>
-
         </form>
     </div>
 </div>
 
 <style>
     .logincustom {
-        background-color: rgb(255, 255, 255, 0.4);
+        background-color: rgba(255, 255, 255, 0.4);
         border: 3px solid black;
     }
 
@@ -42,6 +38,24 @@
         transition: background-color 0.5s ease-in-out;
         background-color: #d6d6d6;
         border: 1px solid black;
+    }
+
+    /* Estilos responsivos */
+    @media (max-width: 576px) {
+        .logincustom {
+            padding: 20px; /* Añade espacio interno */
+            border: 2px solid black;
+        }
+
+        .form-control {
+            font-size: 14px; /* Tamaño del texto para dispositivos móviles */
+            padding: 8px; /* Ajusta el espacio interno del input */
+            width: 100%; /* Ancho completo en pantallas pequeñas */
+        }
+
+        .btn-custom {
+            width: 100%; /* Ancho completo en pantallas pequeñas */
+        }
     }
 </style>
 {% endblock %}

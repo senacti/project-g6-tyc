@@ -9,7 +9,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-custom align-items-start custom-navbar mt-2 mb-2">
     <div class="container-fluid d-flex justify-content-between">
-        
+
         <a class="navbar-brand text-center-vertical" href="{% url 'index' %}">
             <img src="{% static 'images/LogoSinFondo_PapeleriaT_C.png' %}" alt="Logo" width="30" height="30"
                 class="rounded-circle">
@@ -22,7 +22,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarCollapse" style="font-size: 1.2vw;">
+            <div class="collapse navbar-collapse" id="navbarCollapse" style="font-size: 1.2em;" data-toggle="collapse"
+                data-target="#navbarCollapse">
                 <ul class="navbar-nav ms-auto">
                     {% if user.is_authenticated %}
 
@@ -87,15 +88,15 @@
 
                     {% endif %}
 
-                    
+
                     {% if user.groups.all.0.name == 'Empleado' %}
                     <li class="carritocustom nav-item hoverable">
                         <a class="nav-link {% if request.path == menu_empleados %}active{% endif %}"
-                        href="{% url 'menu_empleados' %}"
-                        onmouseenter="animateText(this.querySelector('.name-label-closed'))">
-                        <span class="name-label-closed">Web Cerrada</span>
-                        <span class="fas fa-lock"></span>
-                    </a>
+                            href="{% url 'menu_empleados' %}"
+                            onmouseenter="animateText(this.querySelector('.name-label-closed'))">
+                            <span class="name-label-closed">Web Cerrada</span>
+                            <span class="fas fa-lock"></span>
+                        </a>
                     </li>
                     {% endif %}
                     {% if user.groups.all.0.name == 'Admin' %}
@@ -238,7 +239,7 @@
     .cart-icon {
         color: #ffffff;
         transition: color 0.2s ease-in-out;
-        
+
     }
 
     .cart-icon:hover {
@@ -286,6 +287,20 @@
         animation: animate__slideInLeft;
         animation-duration: 0.2s;
     }
+
+    @media (max-width: 991px) {
+
+        .navbar-collapse .nav-link .name-label-shipping,
+        .navbar-collapse .nav-link .name-label-completeds,
+        .navbar-collapse .nav-link .name-label-billing,
+        .navbar-collapse .nav-link .name-label-admin,
+        .navbar-collapse .nav-link .name-label-logout,
+        .navbar-collapse .nav-link .name-label-closed {
+            display: inline-block;
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
 </style>
 <script>
     const hoverableItems = document.querySelectorAll('.hoverable');
@@ -301,6 +316,13 @@
             const nameLabel = item.querySelector('.name-label');
             nameLabel.style.display = 'none';
         });
+
+        const navCollapse = document.getElementById('navbarCollapse');
+        const navLinks = navCollapse.querySelectorAll('.nav-link');
+
+        navLinks.forEach(link => {
+            link.querySelector('.name-label').style.display = 'inline-block';
+        });
     });
     function animateText(element) {
         const text = element.textContent;
@@ -314,4 +336,19 @@
             newSpan.style.transitionDelay = `${i * 50}ms`;
         }
     }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navCollapse = document.getElementById('navbarCollapse');
+
+        navbarToggler.addEventListener('click', () => {
+            if (navCollapse.classList.contains('show')) {
+                navCollapse.classList.remove('show');
+            } else {
+                navCollapse.classList.add('show');
+            }
+        });
+    });
+
+
 </script>

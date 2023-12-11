@@ -26,7 +26,7 @@ def index(request):
     productos = Producto.objects.all().order_by('-id')
 
     return render(request,'index.html', {
-        'message': 'Listado de productos',
+        'message': 'Buscar',
         'title': 'Productos',
         'productos': productos
     } )
@@ -117,5 +117,17 @@ def categoriasE(request):
 @empleado_required
 def promocionalE(request):
     return render(request, 'web_cerrada/promocionalE.html',{
+
+    })
+
+@empleado_required
+def ayuda(request):
+    return render(request, 'web_cerrada/ayuda.html',{
+
+    })
+
+@empleado_required
+def modulosindex(request):
+    return render(request, 'web_cerrada/modulosindex.html',{
 
     })

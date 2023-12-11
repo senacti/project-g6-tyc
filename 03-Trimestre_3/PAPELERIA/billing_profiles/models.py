@@ -11,6 +11,11 @@ class BillingProfile(models.Model):
     default = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        verbose_name = 'Perfil Facturacion '
+        verbose_name_plural = 'Perfiles Facturaciones'
+        
     def __str__(self):
         return self.card_id
+    
 

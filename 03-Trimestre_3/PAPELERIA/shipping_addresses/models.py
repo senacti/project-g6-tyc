@@ -72,6 +72,10 @@ class ShippingAddress(models.Model):
     default = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        verbose_name = 'Direccion de Envio'
+        verbose_name_plural = 'Direcciones De Envio'
+
     def __str__(self):
         address = "{} - {} - {}"
         return address.format(self.postal_code, self.line1, self.line2, self.line3)

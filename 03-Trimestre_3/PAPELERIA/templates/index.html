@@ -4,8 +4,8 @@
 {% block content%}
 
 <div class="col">
-    <div class="col-10 offset-md-1 mb-4">
-        <h4 class="text-center mb-4" style="font-family: Inter; font-weight: bold;">{{ message }}</h1>
+    <div class="col-12 {% if request.responsive_device == 'desktop' %}col-md-10 offset-md-1{% endif %} mb-4">
+        <h4 class="text-center mb-4" style="font-family: Inter; font-weight: bold;">Buscar <i class="ms-2 fas fa-search"></i></h1>
             {% include 'productos/snippets/search.html' %}
     </div>
     

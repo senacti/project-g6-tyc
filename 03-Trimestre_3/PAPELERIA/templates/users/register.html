@@ -2,22 +2,21 @@
 
 {% block content %}
 <div class="col mt-5">
-
-    <div class="container-sm p-5 rounded text-dark logincustom">
+    <div class="container-sm p-4 p-sm-5 rounded text-dark logincustom">
         <h2 class="text-center" style="font-family: Poppins; font-weight: bold;">Registro</h2>
         <form method="post">
             {% csrf_token %}
             {% for field in form %}
                 <div class="form-group">
-                    {{ field.label_tag }}
-                    {{ field }}
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" class="form-control">
                     {% if field.errors %}
                         {{ field.errors }}
                     {% endif %}
                 </div>
             {% endfor %}
             <div class="text-center mt-3">
-                <button type="submit" class="btn btn-custom">Registrar</button>
+                <button type="submit" class="btn btn-custom btn-lg">Registrar</button>
             </div>
         </form>
     </div>
@@ -25,7 +24,7 @@
 
 <style>
     .logincustom {
-        background-color: rgb(255, 255, 255, 0.4);
+        background-color: rgba(255, 255, 255, 0.4);
         border: 3px solid black;
     }
 
@@ -40,5 +39,23 @@
         background-color: #d6d6d6;
         border: 1px solid black;
     }
+
+    @media (max-width: 576px) {
+        .logincustom {
+            padding: 20px; /* Añade espacio interno */
+            border: 2px solid black;
+        }
+
+        .form-control {
+            font-size: 14px; /* Tamaño del texto para dispositivos móviles */
+            padding: 8px; /* Ajusta el espacio interno del input */
+            width: 100%; /* Ancho completo en pantallas pequeñas */
+        }
+
+        .btn-custom {
+            width: 100%; /* Ancho completo en pantallas pequeñas */
+        }
+    }
+
 </style>
 {% endblock %}
